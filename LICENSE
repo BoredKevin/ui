@@ -12,6 +12,15 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+EXCEPTIONS AND TRADEMARK NOTICE:
+The "BKVN" name, logo assets (including public/BKVN.png), and the specific
+visual implementation, arrangement, and styling of the "BKVN" lettermark are
+trademarks and proprietary visual assets of BoredKevin and are EXCLUDED from
+the grant of this license. You may not use the BKVN logo, marks, or branding to
+endorse, promote, or identify derivative products without prior written permission.
+Third-party font files bundled in this repository remain subject to their
+respective Open Font Licenses (OFL).
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -19,3 +28,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
