@@ -1,0 +1,455 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Luna Obscura';
+  src: url('/hs_lunaobscura_v1.0/HS_LunaObscura.woff2') format('woff2'),
+       url('/hs_lunaobscura_v1.0/HS_LunaObscura.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Albatross';
+  src: url('/albatross/Albatross.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-luna {
+  font-family: 'Luna Obscura', 'Inter', sans-serif;
+  font-feature-settings: "ss01" 1;
+  -webkit-font-feature-settings: "ss01" 1;
+  -moz-font-feature-settings: "ss01" 1;
+}
+
+.ss01 {
+  font-feature-settings: "ss01" 1;
+  -webkit-font-feature-settings: "ss01" 1;
+  -moz-font-feature-settings: "ss01" 1;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0rem;
+
+    /* Sci-Fi HUD Tokens */
+    --chamfer-size: 6px;
+    --chamfer-clip: polygon(0 0, calc(100% - var(--chamfer-size)) 0, 100% var(--chamfer-size), 100% 100%, var(--chamfer-size) 100%, 0 calc(100% - var(--chamfer-size)));
+    --corner-lines: 1;
+    --corner-line-glow: 1;
+    --corner-highlight-length: 8px;
+
+    /* Liquid Glass Tokens */
+    --liquid-glass: 1;
+    --glass-blur: 16px;
+    --glass-opacity: 0.65;
+    --ambient-lighting: 1;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0rem;
+
+    /* Sci-Fi HUD Tokens */
+    --chamfer-size: 6px;
+    --chamfer-clip: polygon(0 0, calc(100% - var(--chamfer-size)) 0, 100% var(--chamfer-size), 100% 100%, var(--chamfer-size) 100%, 0 calc(100% - var(--chamfer-size)));
+    --corner-lines: 1;
+    --corner-line-glow: 1;
+    --corner-highlight-length: 8px;
+
+    /* Liquid Glass Tokens */
+    --liquid-glass: 1;
+    --glass-blur: 16px;
+    --glass-opacity: 0.65;
+    --ambient-lighting: 1;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Atmospheric Ambient Fluid Aurora Mesh */
+@keyframes liquid-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(50px, -40px) scale(1.12); }
+  66% { transform: translate(-40px, 45px) scale(0.92); }
+}
+
+@keyframes liquid-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-45px, 35px) scale(1.1); }
+  66% { transform: translate(40px, -30px) scale(0.95); }
+}
+
+@keyframes liquid-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.15); }
+}
+
+.liquid-orb-1 {
+  animation: liquid-drift-1 18s ease-in-out infinite alternate;
+}
+
+.liquid-orb-2 {
+  animation: liquid-drift-2 22s ease-in-out infinite alternate;
+}
+
+.liquid-orb-3 {
+  animation: liquid-drift-3 15s ease-in-out infinite alternate;
+}
+
+/* Liquid Glass Materials */
+.liquid-glass-card {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card) / var(--glass-opacity, 0.65)) 0%,
+    hsl(var(--card) / calc(var(--glass-opacity, 0.65) * 0.72)) 100%
+  );
+  backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 1px 0 0 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 24px 0 rgba(255, 255, 255, 0.015),
+    0 12px 36px 0 rgba(0, 0, 0, 0.4);
+  border-color: hsl(var(--border) / 0.55);
+}
+
+.liquid-glass-panel {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--background) / 0.75) 0%,
+    hsl(var(--background) / 0.55) 100%
+  );
+  backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border-color: hsl(var(--border) / 0.5);
+}
+
+.liquid-glass-subtle {
+  background: hsl(var(--card) / calc(var(--glass-opacity, 0.65) * 0.55));
+  backdrop-filter: blur(calc(var(--glass-blur, 16px) * 0.75)) saturate(150%);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur, 16px) * 0.75)) saturate(150%);
+  border-color: hsl(var(--border) / 0.4);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Sci-Fi Utilities */
+.scifi-grid-bg {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
+}
+
+.scifi-dots-bg {
+  background-size: 16px 16px;
+  background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
+}
+
+.scifi-glow {
+  filter: drop-shadow(0 0 6px hsl(var(--primary) / 0.6));
+}
+
+.scifi-glow-subtle {
+  filter: drop-shadow(0 0 3px hsl(var(--primary) / 0.4));
+}
+
+/* Chamfer Polygon Clip-Paths */
+.chamfer-active {
+  clip-path: var(--chamfer-clip, polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px)));
+}
+
+.chamfer-dual {
+  clip-path: polygon(0 0, calc(100% - var(--chamfer-size, 6px)) 0, 100% var(--chamfer-size, 6px), 100% 100%, var(--chamfer-size, 6px) 100%, 0 calc(100% - var(--chamfer-size, 6px)));
+}
+
+.chamfer-tr {
+  clip-path: polygon(0 0, calc(100% - var(--chamfer-size, 6px)) 0, 100% var(--chamfer-size, 6px), 100% 100%, 0 100%);
+}
+
+.chamfer-all {
+  clip-path: polygon(var(--chamfer-size, 6px) 0, calc(100% - var(--chamfer-size, 6px)) 0, 100% var(--chamfer-size, 6px), 100% calc(100% - var(--chamfer-size, 6px)), calc(100% - var(--chamfer-size, 6px)) 100%, var(--chamfer-size, 6px) 100%, 0 calc(100% - var(--chamfer-size, 6px)), 0 var(--chamfer-size, 6px));
+}
+
+.chamfer-none {
+  clip-path: none !important;
+}
+
+/* Continuous Chamfer Outline System with Corner Highlights & Zoom/Fade Animations */
+.btn-chamfer-outline {
+  position: relative;
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+  border: none !important;
+  isolation: isolate;
+}
+
+/* Inner Background - Layer -1 sits behind text (Layer 0) and in front of corner highlight (Layer -2) */
+.btn-chamfer-outline::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 60%), hsl(var(--background) / 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  clip-path: inherit;
+  z-index: -1;
+  transition: background 0.2s ease, background-color 0.2s ease;
+}
+
+/* Corner-Only 1px Outline Highlight Layer (Zooms in on hover, zooms out on leave) */
+.btn-chamfer-outline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: inherit;
+  z-index: -2;
+  opacity: 0;
+  transform: scale(0.85);
+  background: 
+    linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top left,
+    linear-gradient(225deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top right,
+    linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom left,
+    linear-gradient(315deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.btn-chamfer-outline:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-chamfer-outline:hover::before {
+  background: hsl(var(--accent));
+}
+
+/* White Solid Variant that Inverts to Outline on Hover */
+.btn-chamfer-white {
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  border: none !important;
+  isolation: isolate;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-chamfer-white::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  clip-path: inherit;
+  z-index: -1;
+  transition: background 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-chamfer-white::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: inherit;
+  z-index: -2;
+  opacity: 0;
+  transform: scale(0.85);
+  background: 
+    linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top left,
+    linear-gradient(225deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top right,
+    linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom left,
+    linear-gradient(315deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.btn-chamfer-white:hover {
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+}
+
+.btn-chamfer-white:hover::before {
+  background: hsl(var(--accent));
+}
+
+.btn-chamfer-white:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Cyber Variant with Corner Highlights & Zoom/Fade */
+.btn-chamfer-cyber {
+  position: relative;
+  background-color: hsl(var(--primary) / 0.35);
+  color: hsl(var(--primary));
+  border: none !important;
+  isolation: isolate;
+}
+
+.btn-chamfer-cyber::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 60%), hsl(var(--card) / 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  clip-path: inherit;
+  z-index: -1;
+  transition: background 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-chamfer-cyber::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: inherit;
+  z-index: -2;
+  opacity: 0;
+  transform: scale(0.85);
+  background: 
+    linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top left,
+    linear-gradient(225deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top right,
+    linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom left,
+    linear-gradient(315deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.btn-chamfer-cyber:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-chamfer-cyber:hover::before {
+  background: hsl(var(--accent));
+}
+
+
+/* Secondary Variant with Corner Highlights & Zoom/Fade */
+.btn-chamfer-secondary {
+  position: relative;
+  background-color: hsl(var(--border));
+  color: hsl(var(--secondary-foreground));
+  border: none !important;
+  isolation: isolate;
+}
+
+.btn-chamfer-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 60%), hsl(var(--secondary) / 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  clip-path: inherit;
+  z-index: -1;
+  transition: background 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-chamfer-secondary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: inherit;
+  z-index: -2;
+  opacity: 0;
+  transform: scale(0.85);
+  background: 
+    linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top left,
+    linear-gradient(225deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) top right,
+    linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom left,
+    linear-gradient(315deg, hsl(var(--primary)) 0%, hsl(var(--primary)) var(--corner-highlight-length, 8px), transparent calc(var(--corner-highlight-length, 8px) + 1px)) bottom right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.btn-chamfer-secondary:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-chamfer-secondary:hover::before {
+  background: hsl(var(--secondary));
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
