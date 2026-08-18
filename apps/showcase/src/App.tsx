@@ -8,6 +8,7 @@ import { DashboardView } from '@/components/showcase/DashboardView';
 import { ApplicationView } from '@/components/showcase/ApplicationView';
 import { MarketingView } from '@/components/showcase/MarketingView';
 import { CustomView } from '@/components/showcase/CustomView';
+import { DocumentationView } from '@/components/showcase/DocumentationView';
 import { CodeModal } from '@/components/modals/CodeModal';
 import { ImportModal } from '@/components/modals/ImportModal';
 import { ShareModal } from '@/components/modals/ShareModal';
@@ -40,8 +41,8 @@ const MainLayout: React.FC = () => {
 
       {/* Main Body */}
       <div className="flex-1 flex flex-col lg:flex-row relative z-10">
-        {/* Left Sidebar (Editor) */}
-        {!fullscreenPreview && <ThemeEditor />}
+        {/* Left Sidebar (Editor) - Hidden if in Docs or Fullscreen */}
+        {!fullscreenPreview && activeShowcaseTab !== 'documentation' && <ThemeEditor />}
 
         {/* Right Canvas / Showcase Area */}
         <main
@@ -59,9 +60,10 @@ const MainLayout: React.FC = () => {
 
           {/* Sub Navigation Bar above Showcase */}
           <div className="flex h-11 items-center justify-between border-b border-border/60 bg-card/20 backdrop-blur-md px-4 relative z-10">
-            {/* View Tabs: Custom, Cards (default), Dashboard, Application, Marketing */}
+            {/* View Tabs: Docs, Custom, Cards (default), Dashboard, Application, Marketing */}
             <div className="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
               {[
+                { id: 'documentation', label: 'Docs', highlight: true },
                 { id: 'custom', label: 'Custom' },
                 { id: 'cards', label: 'Cards' },
                 { id: 'dashboard', label: 'Dashboard' },
@@ -73,13 +75,15 @@ const MainLayout: React.FC = () => {
                   type="button"
                   onClick={() => setActiveShowcaseTab(tab.id as ShowcaseTab)}
                   className={cn(
-                    'px-3 py-1 text-xs font-medium transition-colors border',
+                    'px-3 py-1 text-xs font-medium transition-colors border flex items-center gap-1.5',
                     activeShowcaseTab === tab.id
                       ? 'border-border bg-card text-foreground font-semibold shadow-sm'
-                      : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40'
+                      : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40',
+                    tab.id === 'documentation' && activeShowcaseTab !== 'documentation' && 'text-primary hover:text-primary font-mono'
                   )}
                 >
-                  {tab.label}
+                  {tab.id === 'documentation' && <span className="h-1.5 w-1.5 bg-primary inline-block" />}
+                  <span>{tab.label}</span>
                 </button>
               ))}
 
@@ -117,6 +121,7 @@ const MainLayout: React.FC = () => {
 
           {/* Active View Component */}
           <div className="flex-1 overflow-y-auto pb-12 relative z-10">
+            {activeShowcaseTab === 'documentation' && <DocumentationView />}
             {activeShowcaseTab === 'cards' && <CardsView />}
             {activeShowcaseTab === 'dashboard' && <DashboardView />}
             {activeShowcaseTab === 'application' && <ApplicationView />}
