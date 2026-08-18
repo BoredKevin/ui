@@ -5,7 +5,14 @@ A sharp-cornered Shadcn UI design system inspired by Tweakcn with pitch-dark aes
 ## Monorepo Structure
 
 - **[`packages/ui`](./packages/ui)**: The publishable `@boredkevin/ui` npm package containing all components, theme context, tokens, background canvas effects, and styles.
-- **[`apps/showcase`](./apps/showcase)**: The interactive Tweakcn-style showcase SPA and live theme builder (Vite + React + Tailwind).
+- **[`apps/showcase`](./apps/showcase)**: The interactive showcase SPA, documentation hub, and live theme builder (Vite + React + Tailwind).
+
+## Documentation
+Run `npm run dev` and click the **Docs** tab in the showcase to view:
+- **Interactive Component API & Live Previews** (Button, Card, Dialog, Tabs, etc.)
+- **Theming & HSL Token Reference**
+- **Dynamic 60fps Canvas Particle Backgrounds**
+- **AI / LLM Agent System Prompt Rules** (for Cursor, Claude, and Copilot)
 
 ## Available Scripts
 
