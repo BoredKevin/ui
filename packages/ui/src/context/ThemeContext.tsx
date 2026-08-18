@@ -11,7 +11,7 @@ import {
   applyHslAdjustments,
 } from '@/theme/tokens';
 
-export type ShowcaseTab = 'custom' | 'cards' | 'dashboard' | 'application' | 'marketing';
+export type ShowcaseTab = 'custom' | 'cards' | 'dashboard' | 'application' | 'marketing' | 'documentation';
 export type EditorTab = 'colors' | 'typography' | 'scifi' | 'other' | 'generate';
 
 interface ThemeContextType {
