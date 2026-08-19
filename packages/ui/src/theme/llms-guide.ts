@@ -1,17 +1,22 @@
 /**
  * Instruction set formatted specifically for AI LLMs, Coding Agents, and Assistant Rules.
  */
-export const LLMS_INSTRUCTIONS = `# @boredkevin/ui AI LLM & Coding Agent Implementation Guide
+export const LLMS_INSTRUCTIONS = `# @boredkevin/ui Implementation Guide for AI Assistants
 
-You are an expert Frontend AI Assistant generating code for applications using **@boredkevin/ui** — the sharp-cornered, pitch-dark Shadcn UI design system inspired by Tweakcn with customizable dynamic backgrounds (Constellations & Perlin Noise).
+You are an expert Frontend AI Assistant generating UI code for web applications using **@boredkevin/ui** — a precision-crafted, pitch-dark design system with customizable dynamic backgrounds (Constellations, Perlin Noise, Aurora) and live HSL theme controls.
 
-## 1. Core Design Axioms
-- **Zero Border Radius (\`--radius: 0rem\`)**: ALL buttons, cards, dialogs, dropdowns, inputs, popovers, badges, tabs, and avatar containers MUST have sharp 90-degree corners. Never use \`rounded-md\`, \`rounded-lg\`, or \`rounded-full\` unless explicitly asked for a circular indicator. Use \`rounded-none\` or \`rounded-[var(--radius)]\`.
-- **Pitch Dark & Crisp Contrast**: Dark background is pitch zinc \`hsl(0 0% 3.9%)\` (\`#09090b\`), cards are \`hsl(0 0% 3.9%)\` with subtle 1px border \`hsl(0 0% 14.9%)\` (\`#27272a\`), foreground is pure high-contrast white \`hsl(0 0% 98%)\`.
-- **Borders & Separators**: Crisp, 1px solid borders \`border-border\` (\`border-[hsl(var(--border))]\`).
+The complete live documentation, interactive previews, and component APIs are available at:
+https://ui.bkev.in/docs
 
-## 2. CSS Variables Configuration (globals.css)
-When setting up a project, ensure \`app/globals.css\` or \`src/index.css\` contains:
+## 1. Quick Documentation Endpoints
+- **Quickstart & Setup**: https://ui.bkev.in/docs/installation
+- **Theming & Tokens**: https://ui.bkev.in/docs/theming
+- **Canvas Backgrounds**: https://ui.bkev.in/docs/backgrounds
+- **Component Directory**: https://ui.bkev.in/docs/components/:componentId (e.g., button, card, corner-edges, input, badge, dialog, tabs)
+- **Machine Index**: https://ui.bkev.in/llms.txt
+
+## 2. Setup (globals.css & ThemeProvider)
+Ensure \`globals.css\` or \`index.css\` contains:
 
 \`\`\`css
 @tailwind base;
@@ -63,64 +68,28 @@ When setting up a project, ensure \`app/globals.css\` or \`src/index.css\` conta
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
     --radius: 0rem;
-
-    /* Sci-Fi Tactical Chamfers & Corner Lines */
-    --chamfer-size: 6px;
-    --chamfer-clip: polygon(0 0, calc(100% - var(--chamfer-size)) 0, 100% var(--chamfer-size), 100% 100%, var(--chamfer-size) 100%, 0 calc(100% - var(--chamfer-size)));
-    --corner-lines: 1;
-    --corner-line-glow: 1;
   }
 }
 \`\`\`
 
 ## 3. Dynamic Background Components
-\`@boredkevin/ui\` provides standalone, customizable dynamic 60fps canvas backgrounds:
+\`@boredkevin/ui\` provides high-performance 60fps canvas backgrounds:
 
-### 🌟 Constellations Background
-Interactive twinkling star nodes with proximity connection webbing and mouse magnetism:
 \`\`\`tsx
-import { ConstellationsBackground } from '@boredkevin/ui';
+import { ConstellationsBackground, PerlinNoiseBackground, CanvasBackground } from '@boredkevin/ui';
 
-<ConstellationsBackground
-  particleCount={80}
-  maxDistance={140}
-  speed={0.7}
-  starSize={2}
-  glow={true}
-  interactive={true}
-/>
-\`\`\`
+// Star nodes with proximity connection webbing and mouse interaction
+<ConstellationsBackground particleCount={80} maxDistance={140} speed={0.7} interactive={true} />
 
-### 🌊 Perlin Noise Flow Field Background
-Silky organic particle streamlines driven by mathematical Perlin vector noise:
-\`\`\`tsx
-import { PerlinNoiseBackground } from '@boredkevin/ui';
+// Organic flow field streamlines driven by Perlin vector noise
+<PerlinNoiseBackground particleCount={400} noiseScale={0.003} flowSpeed={0.8} colorMode="theme" interactive={true} />
 
-<PerlinNoiseBackground
-  particleCount={400}
-  noiseScale={0.003}
-  flowSpeed={0.8}
-  lineThickness={1.2}
-  colorMode="theme" // 'theme' | 'aurora' | 'cyan' | 'emerald' | 'amber' | 'crimson' | 'monochrome'
-  interactive={true}
-/>
-\`\`\`
-
-### 🌌 Atmospheric Aurora & Unified Canvas Background
-\`\`\`tsx
-import { CanvasBackground } from '@boredkevin/ui';
-
-// Automatically renders active theme background and responds to theme controls
+// Automatically matches active theme settings
 <CanvasBackground />
 \`\`\`
 
-## 4. Sci-Fi Tactical Chamfers & Corner Lines
-1. **Customizable Chamfers on Buttons & Inputs**:
-   - \`chamfer="dual"\` (Default 45° cut on top-right & bottom-left)
-   - \`chamfer="top-right"\` (Single notch)
-   - \`chamfer="all"\` (4-corner combat bevel)
-   - \`chamfer="none"\` (Rectangular 0rem sharp)
-2. **Bright Corner Edge Lines on Cards & Containers**:
-   - Use \`<Card cornerLines={true} telemetry="SYS.01">\` for bright neon cyber brackets framing panels.
-   - Use \`<CornerEdges size={10} glow={true} telemetry="SYS.01" />\` standalone.
+## 4. Components & Tactical Sci-Fi Chamfers
+- Buttons & Inputs support \`chamfer="dual"\` (top-right & bottom-left 45° cut), \`chamfer="top-right"\`, \`chamfer="all"\`, or \`chamfer="none"\`.
+- Cards support \`<Card cornerLines={true} telemetry="SYS.01">\` for cyber HUD bracket framing.
+- Standalone \`<CornerEdges size={10} glow={true} telemetry="SYS.01" />\` can frame any arbitrary element.
 `;
