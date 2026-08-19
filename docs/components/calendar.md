@@ -1,10 +1,12 @@
 # Calendar
 
-A date picker calendar component with cyber styling.
+A date selection grid styled with sharp rectangular borders and high-contrast active dates, ideal for scheduling panels and log filters.
 
 - **Source**: `packages/ui/src/components/ui/calendar.tsx`
 
 ## Interactive Calendar
+
+Embed a date picker directly into any card or container:
 
 ```tsx
 import { Calendar } from '@boredkevin/ui';
@@ -22,6 +24,6 @@ export function CalendarDemo() {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `selectedDate` | `number` | `6` | Currently selected day number |
-| `onSelectDate` | `(day: number) => void` | `undefined` | Callback on date click |
-| `className` | `string` | `undefined` | Additional styling classes |
+| `selectedDate` | `number` | `6` | The currently selected day number |
+| `onSelectDate` | `(day: number) => void` | `undefined` | Callback fired when a date is clicked |
+| `className` | `string` | `undefined` | Additional Tailwind utility classes |

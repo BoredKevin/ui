@@ -1,11 +1,13 @@
 # Dialog
 
-A modal dialog window overlaid on the primary viewport, powered by Radix UI with crisp borders and backdrop blur.
+Modal dialogs for critical actions, confirmations, or detailed forms. Powered by Radix UI for accessible keyboard focus trapping, Escape-to-close behavior, and smooth backdrop transitions.
 
 - **Source**: `packages/ui/src/components/ui/dialog.tsx`
 - **Primitive**: `Dialog (@radix-ui/react-dialog)`
 
 ## Interactive Dialog
+
+Compose a modal using triggers, headers, content, and footer actions:
 
 ```tsx
 import {
@@ -17,7 +19,7 @@ import {
   DialogDescription,
   DialogFooter,
   Button,
-  Input
+  Input,
 } from '@boredkevin/ui';
 
 <Dialog>
@@ -46,5 +48,5 @@ import {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `open` | `boolean` | `undefined` | Controlled open state |
-| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback when open state changes |
+| `open` | `boolean` | `undefined` | Controls whether the dialog is open |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback fired when the open state changes |

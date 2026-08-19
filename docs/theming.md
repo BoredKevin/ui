@@ -1,12 +1,13 @@
 # Theming & Design Tokens
 
-Master the pitch-dark HSL color system, precision design tokens, sci-fi chamfers, and dynamic runtime customization hooks.
+The theming architecture in `@boredkevin/ui` is built on standard CSS custom properties and HSL color values rather than heavy CSS-in-JS runtimes. This allows dark and light modes, color presets, and runtime hue shifts to function dynamically with zero page reloads.
 
-## 1. CSS Variables Architecture
+## 1. How the CSS Variables Work
 
-Colors are defined as raw HSL channel triplets (`h s% l%`) without the `hsl()` wrapper to allow alpha blending with Tailwind (e.g., `bg-primary/20`):
+Colors are stored as raw HSL channel values (like `0 0% 98%`) instead of wrapped `hsl(...)` strings. This allows Tailwind to apply opacity modifiers dynamically, enabling utility classes such as `bg-primary/20` or `text-foreground/60` across all components.
 
 ```css
+/* Light mode defaults */
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;
@@ -20,6 +21,7 @@ Colors are defined as raw HSL channel triplets (`h s% l%`) without the `hsl()` w
   --radius: 0rem;
 }
 
+/* Dark mode overrides (active by default) */
 .dark {
   --background: 0 0% 3.9%;
   --foreground: 0 0% 98%;
@@ -34,9 +36,9 @@ Colors are defined as raw HSL channel triplets (`h s% l%`) without the `hsl()` w
 }
 ```
 
-## 2. useTheme() Runtime Hook
+## 2. Using the useTheme Hook
 
-Manipulate theme modes, presets, and hue rotation dynamically:
+The `useTheme` hook provides access to the active theme state, preset selections, and dynamic color adjustments:
 
 ```tsx
 import React from 'react';
@@ -44,29 +46,39 @@ import { useTheme, Button } from '@boredkevin/ui';
 
 export function ThemeControls() {
   const {
-    theme,
     isDark,
     toggleThemeMode,
     selectPreset,
     setHueShift,
-    resetTheme
+    resetTheme,
   } = useTheme();
 
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
+      {/* Toggle dark / light mode */}
       <Button variant="outline" onClick={toggleThemeMode}>
-        {isDark ? 'Light' : 'Dark'}
+        {isDark ? 'Switch to Light' : 'Switch to Dark'}
       </Button>
+
+      {/* Switch to a preset */}
       <Button variant="cyber" onClick={() => selectPreset('zinc-cyber')}>
         Cyber Preset
+      </Button>
+
+      {/* Reset to defaults */}
+      <Button variant="ghost" onClick={resetTheme}>
+        Reset
       </Button>
     </div>
   );
 }
 ```
 
-## 3. Presets
-- `default-sharp`: Pitch-black OLED monochrome contrast.
-- `zinc-cyber`: Cyberpunk cyan neon accents.
-- `emerald-matrix`: Matrix tactical emerald green.
-- `amber-terminal`: Retro industrial amber phosphor.
+## 3. Built-In Presets
+
+The library ships with four curated color presets tailored for dark mode:
+
+- **`default-sharp`**: Pitch-black monochrome with crisp white text and silver accents.
+- **`zinc-cyber`**: High-contrast dark slate with vivid cyan neon highlights.
+- **`emerald-matrix`**: Deep tactical green tones inspired by terminal screens.
+- **`amber-terminal`**: Warm amber phosphor glow reminiscent of vintage monitors.

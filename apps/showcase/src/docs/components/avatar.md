@@ -1,11 +1,13 @@
 # Avatar
 
-A user image representation with fallback initials or icons.
+Displays a user profile image with automatic fallback to text initials or an icon if the image is missing or loading.
 
 - **Source**: `packages/ui/src/components/ui/avatar.tsx`
 - **Primitive**: `Avatar (@radix-ui/react-avatar)`
 
 ## Avatar Examples
+
+Render user avatars with images or text fallbacks:
 
 ```tsx
 import { Avatar, AvatarImage, AvatarFallback } from '@boredkevin/ui';
@@ -25,4 +27,4 @@ import { Avatar, AvatarImage, AvatarFallback } from '@boredkevin/ui';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `className` | `string` | `undefined` | Additional CSS classes |
+| `className` | `string` | `undefined` | Additional Tailwind utility classes |

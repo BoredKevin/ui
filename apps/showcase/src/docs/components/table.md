@@ -1,17 +1,18 @@
 # Table
 
-A responsive, high-density data table with row hover states and telemetry alignment.
+High-density data tables designed for metrics, event logs, and status dashboards with row hover states and monospace alignment.
 
 - **Source**: `packages/ui/src/components/ui/table.tsx`
 
 ## Data Table Example
+
+Assemble structured tables using header, body, row, cell, and caption components:
 
 ```tsx
 import {
   Table,
   TableHeader,
   TableBody,
-  TableFooter,
   TableHead,
   TableRow,
   TableCell,
@@ -43,4 +44,4 @@ import {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `className` | `string` | `undefined` | Additional styling classes |
+| `className` | `string` | `undefined` | Additional Tailwind utility classes |

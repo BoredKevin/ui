@@ -1,10 +1,12 @@
 # CornerEdges
 
-Standalone sci-fi HUD bracket framing system with glowing corner lines, telemetry markers, and tactical status readouts.
+When you want to frame an arbitrary container with a sci-fi HUD aesthetic, `CornerEdges` renders four corner bracket accents and an optional status code inside any relative parent element.
 
 - **Source**: `packages/ui/src/components/ui/corner-edges.tsx`
 
 ## Basic HUD Framing
+
+Drop `CornerEdges` into any container with `relative` positioning:
 
 ```tsx
 import { CornerEdges } from '@boredkevin/ui';
@@ -20,7 +22,7 @@ import { CornerEdges } from '@boredkevin/ui';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `size` | `number` | `8` | Size of corner bracket arms in pixels |
-| `glow` | `boolean` | `true` | Enables subtle accent neon glow |
-| `telemetry` | `string` | `undefined` | Monospace status or identifier code |
-| `variant` | `'primary' \| 'cyber' \| 'destructive' \| 'muted'` | `'primary'` | Color theme for corner brackets |
+| `size` | `number` | `8` | Length of each corner bracket arm in pixels |
+| `glow` | `boolean` | `true` | Enables a soft neon accent glow around each bracket |
+| `telemetry` | `string` | `undefined` | Optional monospace text label placed near the top edge |
+| `variant` | `'primary' \| 'cyber' \| 'destructive' \| 'muted'` | `'primary'` | Color scheme for the brackets and glow |

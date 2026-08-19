@@ -1,18 +1,28 @@
 # Card & Telemetry
 
-Pitch-dark card container with optional telemetry tags and glowing sci-fi corner bracket framing.
+Cards group related content, metrics, and actions into structured containers. By default, they render in OLED dark with crisp 1px borders. If you are building a telemetry screen or dashboard, you can turn on glowing corner brackets (`cornerLines`) and attach monospace telemetry tags (`telemetry="SYS.01"`).
 
 - **Source**: `packages/ui/src/components/ui/card.tsx`
 
 ## Basic Card
 
+A clean container with header, body, and footer areas:
+
 ```tsx
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button, Badge } from '@boredkevin/ui';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  Button,
+} from '@boredkevin/ui';
 
 <Card className="w-full max-w-md">
   <CardHeader>
     <CardTitle>System Overview</CardTitle>
-    <CardDescription>Real-time telemetry and diagnostics.</CardDescription>
+    <CardDescription>Live diagnostics and node status.</CardDescription>
   </CardHeader>
   <CardContent>
     <p className="text-sm text-muted-foreground">All nodes operating normally.</p>
@@ -25,6 +35,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, 
 ```
 
 ## Card with Telemetry & Corner Lines
+
+Add glowing corner brackets and an optional monospace ID tag in the upper corner:
 
 ```tsx
 <Card telemetry="SYS.SEC-04" cornerLines={true} className="w-full max-w-md">
@@ -42,7 +54,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, 
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `telemetry` | `string` | `undefined` | Optional sci-fi HUD code rendered in the corner |
-| `cornerLines` | `boolean` | `false` | Enables glowing neon corner brackets |
-| `className` | `string` | `undefined` | Additional CSS classes |
-| `children` | `React.ReactNode` | - | Card sub-components |
+| `telemetry` | `string` | `undefined` | Optional monospace label displayed in the corner |
+| `cornerLines` | `boolean` | `false` | Enables glowing accent corner brackets |
+| `className` | `string` | `undefined` | Additional Tailwind utility classes |
+| `children` | `React.ReactNode` | - | Card sub-components (`CardHeader`, `CardContent`, etc.) |

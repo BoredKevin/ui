@@ -1,11 +1,13 @@
 # Dropdown Menu
 
-Displays a dropdown menu to the user — triggered by a button — with submenus, checkboxes, and radio options.
+Displays an overlay menu triggered by a button, supporting action items, nested submenus, checkboxes, and dividers.
 
 - **Source**: `packages/ui/src/components/ui/dropdown-menu.tsx`
 - **Primitive**: `DropdownMenu (@radix-ui/react-dropdown-menu)`
 
 ## Interactive Dropdown
+
+Attach a menu to a trigger button and group related options with headers and separators:
 
 ```tsx
 import {
@@ -15,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  Button
+  Button,
 } from '@boredkevin/ui';
 
 <DropdownMenu>
@@ -36,5 +38,5 @@ import {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `open` | `boolean` | `undefined` | Controlled open state |
-| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback on open change |
+| `open` | `boolean` | `undefined` | Controlled open state of the dropdown |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback fired when the menu opens or closes |

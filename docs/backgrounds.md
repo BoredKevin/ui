@@ -1,10 +1,12 @@
 # Canvas Backgrounds
 
-Hardware-accelerated dynamic 60fps canvas backgrounds for React applications.
+Dark interfaces look great with high-contrast borders and sharp typography, but completely flat backgrounds can sometimes feel static. `@boredkevin/ui` provides a collection of lightweight, canvas-based ambient backgrounds that drop straight into your app without pulling in heavy 3D engines or complex WebGL dependencies.
+
+All backgrounds render to standard HTML5 canvas elements, automatically pause when offscreen or unfocused, and adjust smoothly to window resizing.
 
 ## 1. Constellations Background
 
-Interactive twinkling star nodes with proximity connection webbing and mouse magnetism:
+Renders a starry particle field where nearby nodes connect with faint lines. When interactive mode is enabled, particles gently move away from your mouse cursor:
 
 ```tsx
 import { ConstellationsBackground } from '@boredkevin/ui';
@@ -21,7 +23,7 @@ import { ConstellationsBackground } from '@boredkevin/ui';
 
 ## 2. Perlin Noise Flow Field
 
-Silky organic particle streamlines driven by mathematical Perlin vector noise:
+Generates flowing particle trails guided by continuous 2D Perlin noise, creating a smooth smoke or fluid motion effect:
 
 ```tsx
 import { PerlinNoiseBackground } from '@boredkevin/ui';
@@ -38,7 +40,7 @@ import { PerlinNoiseBackground } from '@boredkevin/ui';
 
 ## 3. Atmospheric Aurora
 
-Ambient dynamic glowing color gradients:
+A soft, drifting ambient glow that gently pulses across the screen, adding depth behind cards and modals without distracting from text:
 
 ```tsx
 import { AtmosphericAuroraBackground } from '@boredkevin/ui';
@@ -48,7 +50,7 @@ import { AtmosphericAuroraBackground } from '@boredkevin/ui';
 
 ## 4. CanvasBackground Unified Component
 
-Automatically matches the active theme settings and renders the user's selected background:
+If your application uses the `ThemeProvider` and you want the background to automatically switch based on the user's active theme or preset settings, use the unified `CanvasBackground` component:
 
 ```tsx
 import { CanvasBackground } from '@boredkevin/ui';

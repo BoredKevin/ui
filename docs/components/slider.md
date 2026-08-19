@@ -1,11 +1,13 @@
 # Slider
 
-An input where the user selects a value from within a given range.
+A clean range slider for tuning numeric values such as volume levels, particle counts, opacity percentages, and frequency thresholds.
 
 - **Source**: `packages/ui/src/components/ui/slider.tsx`
 - **Primitive**: `Slider (@radix-ui/react-slider)`
 
 ## Interactive Slider
+
+Render a draggable slider track with support for default values, bounds, and step increments:
 
 ```tsx
 import { Slider } from '@boredkevin/ui';
@@ -17,8 +19,8 @@ import { Slider } from '@boredkevin/ui';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `defaultValue` | `number[]` | `[0]` | Default slider value array |
-| `max` | `number` | `100` | Maximum limit |
-| `min` | `number` | `0` | Minimum limit |
-| `step` | `number` | `1` | Increment step |
-| `onValueChange` | `(value: number[]) => void` | `undefined` | Callback on value change |
+| `defaultValue` | `number[]` | `[0]` | Initial slider value array |
+| `max` | `number` | `100` | Maximum selectable value |
+| `min` | `number` | `0` | Minimum selectable value |
+| `step` | `number` | `1` | Granularity of each step |
+| `onValueChange` | `(value: number[]) => void` | `undefined` | Callback fired as the slider value changes |

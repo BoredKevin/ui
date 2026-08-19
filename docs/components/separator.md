@@ -1,11 +1,13 @@
 # Separator
 
-Visually or semantically separates content with a crisp 1px border line.
+A clean 1px divider for separating content sections, toolbar actions, and lists in horizontal or vertical orientations.
 
 - **Source**: `packages/ui/src/components/ui/separator.tsx`
 - **Primitive**: `Separator (@radix-ui/react-separator)`
 
 ## Horizontal & Vertical Separators
+
+Use dividers to create structure between headers, paragraphs, and inline links:
 
 ```tsx
 import { Separator } from '@boredkevin/ui';
@@ -30,5 +32,5 @@ import { Separator } from '@boredkevin/ui';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Line orientation |
-| `decorative` | `boolean` | `true` | Declares element as decorative for accessibility |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Line direction (`horizontal` or `vertical`) |
+| `decorative` | `boolean` | `true` | Hides the element from assistive technology when purely decorative |

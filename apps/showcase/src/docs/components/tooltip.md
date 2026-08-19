@@ -1,11 +1,13 @@
 # Tooltip
 
-A popup that displays informational text when a user hovers or focuses on an element.
+Displays a short descriptive hint when users hover or focus on an element, helpful for icon buttons and truncated labels.
 
 - **Source**: `packages/ui/src/components/ui/tooltip.tsx`
 - **Primitive**: `Tooltip (@radix-ui/react-tooltip)`
 
 ## Interactive Tooltip
+
+Wrap your trigger with `TooltipProvider` and `Tooltip`:
 
 ```tsx
 import {
@@ -13,7 +15,7 @@ import {
   TooltipTrigger,
   TooltipContent,
   TooltipProvider,
-  Button
+  Button,
 } from '@boredkevin/ui';
 
 <TooltipProvider>
@@ -32,4 +34,4 @@ import {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `delayDuration` | `number` | `700` | Hover duration in milliseconds before tooltip appears |
+| `delayDuration` | `number` | `700` | Delay in milliseconds before the tooltip appears |
