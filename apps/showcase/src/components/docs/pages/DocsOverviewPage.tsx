@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DocHeader, DocSection } from '@/components/showcase/docs/DocLayout';
-import { Button, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge } from '@boredkevin/ui';
+import { Button, Badge } from '@boredkevin/ui';
 import {
-  Sparkles,
   Layers,
   ArrowRight,
   ShieldCheck,
@@ -11,9 +10,7 @@ import {
   Code2,
   Check,
   Copy,
-  Terminal,
   Bot,
-  Sliders,
 } from 'lucide-react';
 import { ALL_DOCS } from '@/lib/docs-loader';
 
@@ -39,7 +36,7 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
     <div className="space-y-12 max-w-4xl mx-auto pb-16">
       <DocHeader
         title="Overview & Architecture"
-        description="A precision-crafted UI component library built on Radix UI, Tailwind CSS, and hardware-accelerated canvas backgrounds — designed for mission-critical developer tools and futuristic dashboards."
+        description="A sharp, pitch-dark UI kit built with Radix UI, Tailwind CSS, and lightweight canvas backgrounds. Designed for developer tools, dashboards, and futuristic web apps."
         badge="Documentation"
       />
 
@@ -48,10 +45,10 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
         <div className="p-4 border border-border bg-card/40 space-y-1.5">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-primary">
             <Zap className="h-4 w-4" />
-            <span>Precision Aesthetics</span>
+            <span>Sharp Aesthetics</span>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Clean rectangular geometry, pitch-dark OLED contrast, and tactical sci-fi chamfers.
+            Pitch-black OLED contrast, crisp 1px borders, and optional angled chamfer cuts without unnecessary fluff.
           </p>
         </div>
 
@@ -61,17 +58,17 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
             <span>Radix UI Powered</span>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Keyboard navigation, focus trapping, and screen-reader accessibility out of the box.
+            Keyboard navigation, focus trapping, and screen-reader accessibility work right out of the box.
           </p>
         </div>
 
         <div className="p-4 border border-border bg-card/40 space-y-1.5">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-primary">
             <Layers className="h-4 w-4" />
-            <span>60fps Canvas FX</span>
+            <span>Ambient Canvas FX</span>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Hardware-accelerated Constellations, Perlin Noise, and Aurora background effects.
+            Lightweight constellation particles, fluid noise fields, and glowing aurora effects in a single component.
           </p>
         </div>
       </div>
@@ -83,7 +80,7 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
             Ready to build?
           </h3>
           <p className="text-xs text-muted-foreground">
-            Follow the step-by-step installation guide to set up Tailwind CSS and ThemeProvider.
+            Follow the quickstart guide to get Tailwind and ThemeProvider set up in a few minutes.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -103,8 +100,8 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
 
       {/* Component Library Directory */}
       <DocSection
-        title="Component Directory (16 Primitives)"
-        description="Explore live interactive previews, props references, and usage examples for each component."
+        title="Component Collection (16 Components)"
+        description="Explore live interactive previews, prop tables, and copy-paste code snippets for each component."
         id="components-directory"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -142,15 +139,15 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
 
       {/* AI Assistant Integration */}
       <DocSection
-        title="AI Assistant & LLM Context"
-        description="Use @boredkevin/ui with Cursor, Claude, Copilot, ChatGPT, or Antigravity."
+        title="AI Assistants & LLM Setup"
+        description="Get Cursor, Claude, Copilot, or ChatGPT up to speed with @boredkevin/ui props and styling."
         id="ai-assistant-context"
       >
         <div className="p-4 border border-border bg-card/30 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-foreground">
               <Bot className="h-4 w-4 text-primary" />
-              <span>Prompt Reference & Documentation URL</span>
+              <span>System Prompt Rules & Docs URL</span>
             </div>
             <Button
               variant="outline"
@@ -172,8 +169,8 @@ Wrap with <ThemeProvider>, import '@boredkevin/ui/theme.css', and use sharp pitc
             </Button>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Instruct AI assistants to reference documentation at{' '}
-            <code className="text-primary font-mono">https://ui.bkev.in/docs</code> and discover endpoints via{' '}
+            Point AI assistants to the live docs at{' '}
+            <code className="text-primary font-mono">https://ui.bkev.in/docs</code> and machine-readable endpoints at{' '}
             <code className="text-primary font-mono">https://ui.bkev.in/llms.txt</code>.
           </p>
           <div className="flex items-center gap-2">

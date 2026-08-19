@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DocHeader, DocSection } from '@/components/showcase/docs/DocLayout';
 import { CodeBlock } from '@/components/ui/CodeBlock';
-import { Button, Badge } from '@boredkevin/ui';
+import { Button } from '@boredkevin/ui';
 import { Bot, FileCode, ExternalLink, Check, Copy } from 'lucide-react';
 
 export const LLMsTxtExplorerDoc: React.FC = () => {
@@ -29,7 +29,7 @@ export const LLMsTxtExplorerDoc: React.FC = () => {
     <div className="space-y-10 max-w-4xl mx-auto pb-16">
       <DocHeader
         title="llms.txt Directory Index"
-        description="Standardized machine-readable endpoint following the llmstxt.org specification, allowing AI models, coding agents, and automated web crawlers to discover all documentation endpoints hosted at https://ui.bkev.in/docs."
+        description="A clean index following the llmstxt.org proposal, giving AI coding assistants and web crawlers a direct roadmap of every component and guide hosted at https://ui.bkev.in/docs."
         badge="llmstxt.org"
       />
 
@@ -37,10 +37,10 @@ export const LLMsTxtExplorerDoc: React.FC = () => {
       <div className="p-4 border border-border bg-card/40 space-y-2">
         <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
           <Bot className="h-4 w-4 text-primary" />
-          <span>Documentation Endpoint for LLMs</span>
+          <span>Direct Roadmap for AI Assistants</span>
         </h3>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          <code className="text-foreground font-mono">/llms.txt</code> is served at the domain root (
+          The index file <code className="text-foreground font-mono">/llms.txt</code> is hosted directly at the root of the site (
           <a
             href="/llms.txt"
             target="_blank"
@@ -49,14 +49,14 @@ export const LLMsTxtExplorerDoc: React.FC = () => {
           >
             https://ui.bkev.in/llms.txt
           </a>
-          ) providing a concise index of all components and setup guides.
+          ) so tools like Cursor, Claude Code, and Copilot can fetch a complete list of component endpoints without having to parse complex web pages.
         </p>
       </div>
 
       {/* Live Interactive Viewer */}
       <DocSection
         title="Live /llms.txt Viewer"
-        description="Inspect the actual raw file content served to AI agents."
+        description="View the exact markdown file served to AI tools."
         id="live-viewer"
       >
         <div className="border border-border bg-card/50">

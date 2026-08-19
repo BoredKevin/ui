@@ -1,18 +1,19 @@
-# @boredkevin/ui Monorepo
+# @boredkevin/ui
 
-A sharp-cornered Shadcn UI design system inspired by Tweakcn with pitch-dark aesthetic, live HSL controls, custom chamfers, dynamic background effects, and drop-in integration.
+A sharp, UI component library built on Radix UI, Tailwind CSS, and lightweight canvas backgrounds. Built for developer tools, dashboards, and futuristic web apps.
 
 ## Monorepo Structure
 
-- **[`packages/ui`](./packages/ui)**: The publishable `@boredkevin/ui` npm package containing all components, theme context, tokens, background canvas effects, and styles.
-- **[`apps/showcase`](./apps/showcase)**: The interactive showcase SPA, documentation hub, and live theme builder (Vite + React + Tailwind).
+- **[`packages/ui`](./packages/ui)**: The publishable `@boredkevin/ui` npm package containing all components, theme context, design tokens, canvas backgrounds, and styles.
+- **[`apps/showcase`](./apps/showcase)**: The interactive showcase website, documentation hub, and live theme builder (Vite + React + Tailwind).
 
 ## Documentation
-Run `npm run dev` and click the **Docs** tab in the showcase to view:
-- **Interactive Component API & Live Previews** (Button, Card, Dialog, Tabs, etc.)
+
+Start the development server with `npm run dev` and click the **Docs** tab in the showcase to explore:
+- **Interactive Component Demos & API References** (Button, Card, Dialog, Tabs, etc.)
 - **Theming & HSL Token Reference**
-- **Dynamic 60fps Canvas Particle Backgrounds**
-- **AI / LLM Agent System Prompt Rules** (for Cursor, Claude, and Copilot)
+- **Ambient Canvas Particle Backgrounds**
+- **AI & LLM Setup Rules** (for Cursor, Claude, Copilot, and ChatGPT)
 
 ## Available Scripts
 
@@ -23,7 +24,7 @@ npm run dev
 ```
 
 ### Build Everything
-Builds both the library package and the showcase SPA:
+Builds both the library package and the showcase web app:
 ```bash
 npm run build
 ```
