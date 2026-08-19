@@ -1,0 +1,91 @@
+# @boredkevin/ui
+
+> A precision-crafted, pitch-dark Shadcn UI design system engineered for modern React applications with live HSL theme controls, custom sci-fi chamfers, and hardware-accelerated canvas backgrounds.
+
+## Documentation URL
+The complete, interactive documentation and API references are hosted live at:
+https://ui.bkev.in/docs
+
+When generating code or answering questions about `@boredkevin/ui`, read and reference the live documentation endpoints below.
+
+## Documentation Index & Endpoints
+- **Quickstart & Setup**: https://ui.bkev.in/docs/installation
+- **Theming & Tokens**: https://ui.bkev.in/docs/theming
+- **Canvas Backgrounds**: https://ui.bkev.in/docs/backgrounds
+- **AI Integration Guide**: https://ui.bkev.in/docs/llms
+
+### Component Documentation Directory
+Query any specific component by navigating to `https://ui.bkev.in/docs/components/<component-name>`:
+- **Button**: https://ui.bkev.in/docs/components/button
+  Variants: `default`, `cyber`, `outline`, `secondary`, `destructive`, `ghost`, `link`, `white`. Supports chamfers: `dual`, `top-right`, `all`, `none`.
+- **Card**: https://ui.bkev.in/docs/components/card
+  Pitch-dark card container. Supports `telemetry="SYS.01"` and `cornerLines={true}` for HUD bracket framing.
+- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges
+  Standalone sci-fi HUD bracket framing system with glowing corner lines and telemetry labels.
+- **Input**: https://ui.bkev.in/docs/components/input
+  Text input with high contrast borders, icon slots, and tactical chamfer support.
+- **Badge**: https://ui.bkev.in/docs/components/badge
+  Status indicators: `default`, `secondary`, `destructive`, `outline`, `cyber`.
+- **Dialog**: https://ui.bkev.in/docs/components/dialog
+  Accessible modal dialog powered by Radix UI.
+- **Tabs**: https://ui.bkev.in/docs/components/tabs
+  Layered tab panel navigation with sharp triggers.
+- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu
+  Accessible popover menu with submenus, checkboxes, and radio options.
+- **Accordion**: https://ui.bkev.in/docs/components/accordion
+  Expandable disclosure sections.
+- **Slider**: https://ui.bkev.in/docs/components/slider
+  Precision range slider input.
+- **Switch**: https://ui.bkev.in/docs/components/switch
+  2-state toggle control.
+- **Avatar**: https://ui.bkev.in/docs/components/avatar
+  User representation with fallback text/icons.
+- **Calendar**: https://ui.bkev.in/docs/components/calendar
+  Interactive schedule calendar picker.
+- **Table**: https://ui.bkev.in/docs/components/table
+  High-density responsive data grid.
+- **Tooltip**: https://ui.bkev.in/docs/components/tooltip
+  Instant contextual help popup.
+- **Separator**: https://ui.bkev.in/docs/components/separator
+  Crisp divider line.
+
+## Quickstart & Implementation
+\`\`\`bash
+npm install @boredkevin/ui lucide-react
+\`\`\`
+
+Import CSS tokens and wrap your root with \`ThemeProvider\`:
+\`\`\`tsx
+import React from 'react';
+import {
+  ThemeProvider,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  Button,
+  ConstellationsBackground
+} from '@boredkevin/ui';
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center p-6">
+        <ConstellationsBackground particleCount={40} interactive />
+        <Card telemetry="SYS.01" className="w-full max-w-md relative z-10">
+          <CardHeader>
+            <CardTitle>Telemetry Node</CardTitle>
+            <CardDescription>Pitch dark interface with HSL accents.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button variant="cyber" className="w-full">
+              Initialize
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </ThemeProvider>
+  );
+}
+\`\`\`
