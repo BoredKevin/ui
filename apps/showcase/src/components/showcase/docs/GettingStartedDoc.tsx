@@ -8,8 +8,8 @@ export const GettingStartedDoc: React.FC = () => {
   return (
     <div className="space-y-10 max-w-4xl mx-auto pb-16">
       <DocHeader
-        title="Getting Started with @boredkevin/ui"
-        description="A sharp-cornered, cyberpunk-inspired Shadcn UI design system engineered for high-performance React applications with pitch-dark aesthetic, live HSL theme controls, custom chamfers, and hardware-accelerated canvas backgrounds."
+        title="Installation & Setup"
+        description="A precision UI design system engineered for high-performance React applications with pitch-dark aesthetics, live HSL theme controls, custom chamfers, and hardware-accelerated canvas backgrounds."
         badge="Guide"
       />
 
@@ -18,10 +18,10 @@ export const GettingStartedDoc: React.FC = () => {
         <div className="p-3 border border-border bg-card/40">
           <div className="flex items-center gap-2 text-primary font-bold text-xs font-mono">
             <Sparkles className="h-4 w-4" />
-            <span>0rem Radius</span>
+            <span>Precision Geometry</span>
           </div>
           <p className="text-xs text-muted-foreground mt-1">
-            Precision rectangular geometry and custom chamfered sci-fi edges.
+            Crisp rectangular layout and custom chamfered sci-fi edges.
           </p>
         </div>
 

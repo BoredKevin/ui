@@ -11,7 +11,7 @@ export const ThemingDoc: React.FC = () => {
     <div className="space-y-10 max-w-4xl mx-auto pb-16">
       <DocHeader
         title="Theming & Design Tokens"
-        description="Master the pitch-dark HSL color system, 0rem sharp radius philosophy, sci-fi chamfers, and dynamic runtime customization hooks."
+        description="Master the pitch-dark HSL color system, precision design tokens, sci-fi chamfers, and dynamic runtime customization hooks."
         badge="Architecture"
       />
 
@@ -19,10 +19,10 @@ export const ThemingDoc: React.FC = () => {
       <div className="p-4 border border-border bg-card/40 space-y-2">
         <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
           <Palette className="h-4 w-4 text-primary" />
-          <span>The Sharp Aesthetic Philosophy</span>
+          <span>The Technical Aesthetic</span>
         </h3>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Unlike rounded, bubble-like consumer design systems, <code className="text-primary font-mono">@boredkevin/ui</code> defaults to crisp, zero-radius (<code className="font-mono text-foreground">--radius: 0rem</code>) edges, pitch-black OLED background contrast (<code className="font-mono text-foreground">0 0% 4%</code>), and surgical telemetry tags for a sci-fi developer terminal feel.
+          Designed for technical software, developer tooling, and futuristic dashboards, <code className="text-primary font-mono">@boredkevin/ui</code> pairs pitch-black OLED background contrast (<code className="font-mono text-foreground">0 0% 4%</code>) with surgical telemetry tags, customizable chamfers, and dynamic color presets.
         </p>
       </div>
 

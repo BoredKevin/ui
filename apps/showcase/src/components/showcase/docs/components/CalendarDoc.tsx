@@ -1,5 +1,5 @@
 import React from 'react';
-import { DocHeader, DocSection, ComponentPreview } from '../DocLayout';
+import { DocHeader, DocSection, ComponentPreview, PropsTable } from '../DocLayout';
 import { Calendar } from '@boredkevin/ui';
 
 export const CalendarDoc: React.FC = () => {
@@ -31,6 +31,27 @@ export function CalendarDemo() {
           </div>
         </ComponentPreview>
       </DocSection>
+
+      <PropsTable
+        props={[
+          {
+            name: 'selectedDate',
+            type: 'number',
+            defaultValue: '6',
+            description: 'The currently highlighted/selected day of the month.',
+          },
+          {
+            name: 'onSelectDate',
+            type: '(day: number) => void',
+            description: 'Callback invoked when a day cell is clicked.',
+          },
+          {
+            name: 'className',
+            type: 'string',
+            description: 'Additional CSS class names to apply to the calendar container.',
+          },
+        ]}
+      />
     </div>
   );
 };

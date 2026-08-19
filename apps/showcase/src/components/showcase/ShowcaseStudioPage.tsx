@@ -1,0 +1,156 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, Maximize2, MoreHorizontal, BookOpen, Bot } from 'lucide-react';
+import { useTheme, ShowcaseTab, CanvasBackground, Button, cn } from '@boredkevin/ui';
+import { ThemeEditor } from '@/components/editor/ThemeEditor';
+import { CardsView } from '@/components/showcase/CardsView';
+import { DashboardView } from '@/components/showcase/DashboardView';
+import { ApplicationView } from '@/components/showcase/ApplicationView';
+import { MarketingView } from '@/components/showcase/MarketingView';
+import { CustomView } from '@/components/showcase/CustomView';
+import { Header } from '@/components/layout/Header';
+import { CodeModal } from '@/components/modals/CodeModal';
+import { ImportModal } from '@/components/modals/ImportModal';
+import { ShareModal } from '@/components/modals/ShareModal';
+import { CommandSearchModal } from '@/components/modals/CommandSearchModal';
+
+export const ShowcaseStudioPage: React.FC = () => {
+  const { theme, activeShowcaseTab, setActiveShowcaseTab } = useTheme();
+
+  const [codeModalOpen, setCodeModalOpen] = useState(false);
+  const [importModalOpen, setImportModalOpen] = useState(false);
+  const [shareModalOpen, setShareModalOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [fullscreenPreview, setFullscreenPreview] = useState(false);
+
+  const isFullApp = theme.fullAppBackground ?? false;
+
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans relative overflow-x-hidden">
+      {/* Full App Scope Dynamic Background (if fullAppBackground is enabled) */}
+      {isFullApp && (
+        <CanvasBackground className="fixed inset-0 pointer-events-none z-0" />
+      )}
+
+      {/* Top Header */}
+      <Header
+        onOpenCode={() => setCodeModalOpen(true)}
+        onOpenImport={() => setImportModalOpen(true)}
+        onOpenShare={() => setShareModalOpen(true)}
+      />
+
+      {/* Main Body */}
+      <div className="flex-1 flex flex-col lg:flex-row relative z-10">
+        {/* Left Sidebar (Theme Editor) - Hidden if Fullscreen */}
+        {!fullscreenPreview && <ThemeEditor />}
+
+        {/* Right Canvas / Showcase Area */}
+        <main
+          className={cn(
+            'flex-1 flex flex-col min-w-0 relative overflow-hidden transition-colors',
+            isFullApp ? 'bg-transparent' : 'bg-background/60'
+          )}
+        >
+          {/* Showcase Scope Dynamic Canvas Background */}
+          {!isFullApp && (
+            <CanvasBackground className="absolute inset-0 pointer-events-none z-0" />
+          )}
+
+          {/* Sub Navigation Bar above Showcase */}
+          <div className="flex h-11 items-center justify-between border-b border-border/60 bg-card/20 backdrop-blur-md px-4 relative z-10">
+            {/* View Tabs: Custom, Cards (default), Dashboard, Application, Marketing */}
+            <div className="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+              <Link
+                to="/docs"
+                className="px-3 py-1 text-xs font-mono font-medium transition-colors border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 flex items-center gap-1.5"
+              >
+                <BookOpen className="h-3 w-3" />
+                <span>Docs</span>
+              </Link>
+
+              {[
+                { id: 'cards', label: 'Cards' },
+                { id: 'dashboard', label: 'Dashboard' },
+                { id: 'application', label: 'Application' },
+                { id: 'marketing', label: 'Marketing' },
+                { id: 'custom', label: 'Custom' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveShowcaseTab(tab.id as ShowcaseTab)}
+                  className={cn(
+                    'px-3 py-1 text-xs font-medium transition-colors border flex items-center gap-1.5',
+                    activeShowcaseTab === tab.id
+                      ? 'border-border bg-card text-foreground font-semibold shadow-sm'
+                      : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40'
+                  )}
+                >
+                  <span>{tab.label}</span>
+                </button>
+              ))}
+
+              <button
+                type="button"
+                className="p-1 text-muted-foreground hover:text-foreground"
+                title="More views"
+              >
+                <MoreHorizontal className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Right Canvas Actions */}
+            <div className="flex items-center space-x-2">
+              <Link
+                to="/docs/llms"
+                className="hidden md:inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline px-2 py-1 transition-colors"
+              >
+                <Bot className="h-3.5 w-3.5" />
+                <span>AI Prompt Rules</span>
+              </Link>
+
+              <a
+                href="https://v0.dev"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground px-2 py-1 transition-colors"
+              >
+                <span>Open in v0</span>
+                <ExternalLink className="h-3 w-3" />
+              </a>
+
+              <button
+                type="button"
+                onClick={() => setFullscreenPreview(!fullscreenPreview)}
+                className="p-1.5 text-muted-foreground hover:text-foreground border border-border bg-card/30 hover:bg-card transition-colors"
+                title={fullscreenPreview ? 'Show Sidebar' : 'Maximize Canvas'}
+              >
+                <Maximize2 className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Active View Component */}
+          <div className="flex-1 overflow-y-auto pb-12 relative z-10">
+            {activeShowcaseTab === 'cards' && <CardsView />}
+            {activeShowcaseTab === 'dashboard' && <DashboardView />}
+            {activeShowcaseTab === 'application' && <ApplicationView />}
+            {activeShowcaseTab === 'marketing' && <MarketingView />}
+            {activeShowcaseTab === 'custom' && <CustomView />}
+          </div>
+        </main>
+      </div>
+
+      {/* Modals */}
+      <CodeModal open={codeModalOpen} onOpenChange={setCodeModalOpen} />
+      <ImportModal open={importModalOpen} onOpenChange={setImportModalOpen} />
+      <ShareModal open={shareModalOpen} onOpenChange={setShareModalOpen} />
+      <CommandSearchModal
+        open={searchModalOpen}
+        onOpenChange={setSearchModalOpen}
+      />
+    </div>
+  );
+};
+
+export default ShowcaseStudioPage;
