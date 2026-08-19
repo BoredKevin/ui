@@ -1,10 +1,10 @@
 # Installation & Setup
 
-Learn how to install `@boredkevin/ui`, configure Tailwind CSS tokens, and initialize the `ThemeProvider`.
+Getting `@boredkevin/ui` running in your project takes about two minutes. You'll install the package, hook up the base CSS variables, tell Tailwind where to find component classes, and wrap your app with the theme provider.
 
-## 1. Package Installation
+## 1. Install the Package
 
-Install `@boredkevin/ui` and peer dependencies:
+Add `@boredkevin/ui` and `lucide-react` (used across several components for icons) using your package manager of choice:
 
 ```bash
 # npm
@@ -20,18 +20,18 @@ yarn add @boredkevin/ui lucide-react
 bun add @boredkevin/ui lucide-react
 ```
 
-## 2. Import CSS Tokens
+## 2. Import the Theme Styles
 
-Import the compiled theme CSS variables in your entry file (`main.tsx` or `app/layout.tsx`):
+Import the compiled theme CSS at the top of your entry file (such as `main.tsx`, `index.tsx`, or `app/layout.tsx` in Next.js). This loads the default HSL color variables and dark mode definitions:
 
 ```tsx
 import '@boredkevin/ui/theme.css';
 import './index.css';
 ```
 
-## 3. Configure Tailwind
+## 3. Configure Tailwind CSS
 
-Ensure Tailwind scans the `@boredkevin/ui` package files:
+In your `tailwind.config.js` or `tailwind.config.ts`, make sure Tailwind scans the `@boredkevin/ui` package so it doesn't purge component styles. Then map the standard color keys to the HSL CSS variables:
 
 ```javascript
 /** @type {import('tailwindcss').Config} */
@@ -84,26 +84,41 @@ module.exports = {
 };
 ```
 
-## 4. Add ThemeProvider
+## 4. Wrap with ThemeProvider
 
-Wrap your application in `ThemeProvider`:
+Wrap your root layout with `<ThemeProvider>`. This gives every component access to theme presets, dark mode toggles, and dynamic color adjustments:
 
 ```tsx
 import React from 'react';
-import { ThemeProvider, Card, CardHeader, CardTitle, Button, ConstellationsBackground } from '@boredkevin/ui';
+import {
+  ThemeProvider,
+  Card,
+  CardHeader,
+  CardTitle,
+  Button,
+  ConstellationsBackground,
+} from '@boredkevin/ui';
 
 export function App() {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center p-6">
+        {/* Ambient star background */}
         <ConstellationsBackground particleCount={40} interactive />
+
+        {/* Sharp HUD card */}
         <Card telemetry="SYS.01" className="w-full max-w-sm relative z-10">
           <CardHeader>
             <CardTitle>Welcome to @boredkevin/ui</CardTitle>
           </CardHeader>
-          <Button variant="cyber" className="w-full">
-            Launch System
-          </Button>
+          <div className="p-6 pt-0 space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Your setup is complete. You are ready to start building.
+            </p>
+            <Button variant="cyber" className="w-full">
+              Launch System
+            </Button>
+          </div>
         </Card>
       </div>
     </ThemeProvider>
