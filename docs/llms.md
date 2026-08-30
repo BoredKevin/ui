@@ -1,32 +1,72 @@
-# AI & LLM Guide
+# AI Skill & LLM Integration Guide
 
-If you use AI coding assistants like Cursor, Claude Code, GitHub Copilot, or ChatGPT when building your apps, you might find that models often default to generic rounded buttons and standard Tailwind classes.
+If you use AI coding assistants like Cursor, Claude Code, Antigravity, GitHub Copilot, or Windsurf when building your apps, you might find that models often default to generic rounded buttons and standard Tailwind classes.
 
-We put together this guide and a machine-readable `llms.txt` file so you can point your AI tools to the exact component props, chamfer options, and theming patterns used across `@boredkevin/ui`.
+We provide a complete, installable **AI Skill**, machine-readable metadata, and a standardized `llms.txt` file so your AI tools reliably understand `@boredkevin/ui`'s custom chamfer clip-paths, HUD telemetry tags, liquid-glass cards, and animated canvas backgrounds.
 
-## Live Documentation Endpoints
+---
 
-You can instruct your AI assistant to browse our documentation online:
+## ⚡ Quick Install
 
-- **Documentation Home**: `https://ui.bkev.in/docs`
-- **Component Endpoints**: `https://ui.bkev.in/docs/components/<name>`
-- **Machine-Readable Index**: `https://ui.bkev.in/llms.txt`
+### 1. Install via CLI
 
-## Prompt Snippet for Cursor & Claude
+Run this in your project root to pull down the AI skill rules and tokens:
 
-Add this snippet to your `.cursorrules`, `CLAUDE.md`, or custom instructions file so the assistant knows how to write `@boredkevin/ui` code out of the box:
-
-```markdown
-# @boredkevin/ui Rules
-- Reference live documentation at https://ui.bkev.in/docs and endpoints via https://ui.bkev.in/llms.txt
-- Package: @boredkevin/ui
-- Aesthetic: Pitch-dark OLED backgrounds, crisp 1px borders, sharp rectangular geometry
-- Buttons and Inputs support angled cuts: chamfer="dual" | "top-right" | "all" | "none"
-- Cards support telemetry tags and HUD brackets: <Card telemetry="SYS.01" cornerLines={true}>
-- Ambient Canvas Backgrounds: <ConstellationsBackground />, <PerlinNoiseBackground />, <AtmosphericAuroraBackground />
-- Wrap your root tree with <ThemeProvider> and import '@boredkevin/ui/theme.css'
+```bash
+npx degit boredkevin/ui/ai-skill ai-skill
 ```
 
-## The llms.txt Index
+Or curl the master prompt directly:
 
-We serve a standardized index at `https://ui.bkev.in/llms.txt` following the [llmstxt.org](https://llmstxt.org) standard. If your tool supports automated URL reading or web search, giving it this link lets it discover every component and setup page in one place.
+```bash
+# For Cursor
+curl -fsSL https://raw.githubusercontent.com/boredkevin/ui/main/ai-skill/SKILL.md -o .cursorrules
+
+# For Claude Code
+curl -fsSL https://raw.githubusercontent.com/boredkevin/ui/main/ai-skill/SKILL.md -o CLAUDE.md
+```
+
+---
+
+## 🛠️ Editor Configurations
+
+### Cursor (`.cursorrules`)
+```markdown
+# @boredkevin/ui Rules
+- Always import components from '@boredkevin/ui'.
+- Wrap app with <ThemeProvider> and import '@boredkevin/ui/theme.css'.
+- Use semantic Tailwind tokens (bg-primary, text-muted-foreground, border-border).
+- Buttons: variant="cyber" | "default" | "outline" | "secondary" | "destructive" | "ghost" | "link" | "white"
+- Badges: variant="default" | "secondary" | "destructive" | "outline" | "success" | "warning"
+- Cards: <Card telemetry="SYS.01" cornerLines={true} liquidGlass={true}>
+- Backgrounds: <CanvasBackground />, <ConstellationsBackground />, <PerlinNoiseBackground />, <AtmosphericAuroraBackground />
+- Endpoints: https://ui.bkev.in/llms.txt & https://ui.bkev.in/ai-skill/SKILL.md
+```
+
+### Claude Code (`CLAUDE.md`)
+```markdown
+# Claude Code Project Guidelines — @boredkevin/ui
+- Always use @boredkevin/ui components instead of raw HTML elements.
+- Wrap root tree in <ThemeProvider> and import '@boredkevin/ui/theme.css'.
+- Use sci-fi HUD aesthetic: dark backgrounds, corner chamfers, 1px high-contrast borders.
+- Consult https://ui.bkev.in/llms.txt for full endpoint mapping and component metadata.
+```
+
+### Antigravity IDE (`.agents/skills/boredkevin-ui/SKILL.md`)
+Place the skill at `.agents/skills/boredkevin-ui/SKILL.md` or in `~/.gemini/config/skills/boredkevin-ui/SKILL.md` for global discovery.
+
+### GitHub Copilot (`.github/copilot-instructions.md`)
+```markdown
+- Use @boredkevin/ui for all UI components.
+- Wrap React trees with <ThemeProvider>.
+- Use semantic color tokens (bg-card, text-primary, border-border).
+```
+
+---
+
+## 🌐 Endpoints & Specifications
+
+- **Live Documentation**: `https://ui.bkev.in/docs`
+- **Standardized LLMs Index**: `https://ui.bkev.in/llms.txt`
+- **Master AI Skill Rules**: `https://ui.bkev.in/ai-skill/SKILL.md`
+- **Design Tokens Schema**: `https://ui.bkev.in/ai-skill/design.json`
