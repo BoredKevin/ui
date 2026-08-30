@@ -2,7 +2,7 @@
 
 If you use AI coding assistants like Cursor, Claude Code, Antigravity, GitHub Copilot, or Windsurf when building your apps, you might find that models often default to generic rounded buttons and standard Tailwind classes.
 
-We provide a complete, installable **AI Skill**, machine-readable metadata, and a standardized `llms.txt` file so your AI tools reliably understand `@boredkevin/ui`'s custom chamfer clip-paths, HUD telemetry tags, liquid-glass cards, and animated canvas backgrounds.
+You can use a complete, installable **AI Skill**, machine-readable metadata, and a standardized `llms.txt` file so your AI tools reliably understand `@boredkevin/ui`'s custom chamfer clip-paths, HUD telemetry tags, liquid-glass cards, and animated canvas backgrounds.
 
 ---
 
