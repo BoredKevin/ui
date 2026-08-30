@@ -1,0 +1,11 @@
+# @boredkevin/ui AI Assistant Rules
+
+@file ai-skill/SKILL.md
+@file ai-skill/design.json
+
+When generating UI code for this project:
+1. Always import components from `@boredkevin/ui` (never use raw `<button>`, `<input>`, etc.).
+2. Always ensure the app tree is wrapped in `<ThemeProvider>`.
+3. Never hardcode colors (#hex, rgb, hsl). Use semantic Tailwind tokens (`bg-primary`, `text-muted-foreground`, `border-border`, etc.).
+4. Use signature sci-fi features: `chamfer="auto"` or `"dual"` on Button/Input, `telemetry="SYS.01"` on Card, and `CanvasBackground` for dynamic backgrounds.
+5. Refer to component metadata files in `ai-skill/components/<component>.meta.ts` for exact props, variants, and composition rules.
