@@ -1,7 +1,7 @@
 {
   "name": "boredkevin-ui-workspace",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "workspaces": [
     "packages/*",
@@ -12,7 +12,9 @@
     "build:ui": "npm run build --workspace=packages/ui",
     "build:showcase": "npm run build --workspace=apps/showcase",
     "build": "npm run build:ui && npm run build:showcase",
-    "preview": "npm run preview --workspace=apps/showcase"
+    "preview": "npm run preview --workspace=apps/showcase",
+    "publish:ui": "npm publish --workspace=packages/ui --access public",
+    "publish:gpr": "npm publish --workspace=packages/ui --registry=https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

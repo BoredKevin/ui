@@ -16,7 +16,7 @@ export const MarketingView: React.FC = () => {
       {/* Hero Section */}
       <div className="text-center space-y-4 py-8 border border-border bg-card/20 p-8">
         <Badge variant="outline" className="mb-2 font-mono text-[11px]">
-          v0.1.0 — @boredkevin/ui
+          v0.1.1 — @boredkevin/ui
         </Badge>
         <h1 className="text-4xl md:text-6xl font-black tracking-tight text-foreground">
           Precision Engineering for <span className="underline decoration-primary">Shadcn UI</span>

@@ -486,8 +486,8 @@ export const CardsView: React.FC = () => {
                       tx.status === 'Success'
                         ? 'success'
                         : tx.status === 'Pending'
-                        ? 'warning'
-                        : 'secondary'
+                          ? 'warning'
+                          : 'secondary'
                     }
                     className="text-[10px]"
                   >

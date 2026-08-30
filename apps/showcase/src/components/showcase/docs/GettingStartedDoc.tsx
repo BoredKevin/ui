@@ -192,7 +192,7 @@ export function App() {
           <CardHeader>
             <div className="flex items-center justify-between">
               <Badge variant="cyber">ONLINE</Badge>
-              <span className="font-mono text-xs text-muted-foreground">v0.1.0</span>
+              <span className="font-mono text-xs text-muted-foreground">v0.1.1</span>
             </div>
             <CardTitle className="text-xl font-bold tracking-tight">
               Welcome to @boredkevin/ui
