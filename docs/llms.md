@@ -6,7 +6,7 @@ We provide a complete, installable **AI Skill**, machine-readable metadata, and 
 
 ---
 
-## ⚡ Quick Install
+## Quick Install
 
 ### 1. Install via CLI
 
@@ -28,7 +28,7 @@ curl -fsSL https://raw.githubusercontent.com/boredkevin/ui/main/ai-skill/SKILL.m
 
 ---
 
-## 🛠️ Editor Configurations
+## Editor Configurations
 
 ### Cursor (`.cursorrules`)
 ```markdown
@@ -64,7 +64,7 @@ Place the skill at `.agents/skills/boredkevin-ui/SKILL.md` or in `~/.gemini/conf
 
 ---
 
-## 🌐 Endpoints & Specifications
+## Endpoints & Specifications
 
 - **Live Documentation**: `https://ui.bkev.in/docs`
 - **Standardized LLMs Index**: `https://ui.bkev.in/llms.txt`
