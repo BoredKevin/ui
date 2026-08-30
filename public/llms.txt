@@ -1,0 +1,62 @@
+# @boredkevin/ui
+
+> A precision-crafted, pitch-dark React design system with live HSL theme controls, custom sci-fi chamfers, and hardware-accelerated canvas backgrounds.
+
+## Documentation & Endpoints
+- Quickstart & Setup: https://ui.bkev.in/docs/installation
+- Theming & Tokens: https://ui.bkev.in/docs/theming
+- Canvas Backgrounds: https://ui.bkev.in/docs/backgrounds
+- LLMs Prompt Guide: https://ui.bkev.in/docs/llms
+
+## AI Skill & Machine Specifications
+- Master System Prompt: https://ui.bkev.in/ai-skill/SKILL.md
+- Design Tokens & Brand Schema: https://ui.bkev.in/ai-skill/design.json
+
+## Component AI Metadata & Docs
+- **Accordion**: https://ui.bkev.in/docs/components/accordion (Meta: https://ui.bkev.in/ai-skill/components/accordion.meta.ts)
+- **Avatar**: https://ui.bkev.in/docs/components/avatar (Meta: https://ui.bkev.in/ai-skill/components/avatar.meta.ts)
+- **Backgrounds**: https://ui.bkev.in/docs/components/backgrounds (Meta: https://ui.bkev.in/ai-skill/components/backgrounds.meta.ts)
+- **Badge**: https://ui.bkev.in/docs/components/badge (Meta: https://ui.bkev.in/ai-skill/components/badge.meta.ts)
+- **Button**: https://ui.bkev.in/docs/components/button (Meta: https://ui.bkev.in/ai-skill/components/button.meta.ts)
+- **Calendar**: https://ui.bkev.in/docs/components/calendar (Meta: https://ui.bkev.in/ai-skill/components/calendar.meta.ts)
+- **Card**: https://ui.bkev.in/docs/components/card (Meta: https://ui.bkev.in/ai-skill/components/card.meta.ts)
+- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges (Meta: https://ui.bkev.in/ai-skill/components/corner-edges.meta.ts)
+- **Dialog**: https://ui.bkev.in/docs/components/dialog (Meta: https://ui.bkev.in/ai-skill/components/dialog.meta.ts)
+- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu (Meta: https://ui.bkev.in/ai-skill/components/dropdown-menu.meta.ts)
+- **Input**: https://ui.bkev.in/docs/components/input (Meta: https://ui.bkev.in/ai-skill/components/input.meta.ts)
+- **Separator**: https://ui.bkev.in/docs/components/separator (Meta: https://ui.bkev.in/ai-skill/components/separator.meta.ts)
+- **Slider**: https://ui.bkev.in/docs/components/slider (Meta: https://ui.bkev.in/ai-skill/components/slider.meta.ts)
+- **Switch**: https://ui.bkev.in/docs/components/switch (Meta: https://ui.bkev.in/ai-skill/components/switch.meta.ts)
+- **Table**: https://ui.bkev.in/docs/components/table (Meta: https://ui.bkev.in/ai-skill/components/table.meta.ts)
+- **Tabs**: https://ui.bkev.in/docs/components/tabs (Meta: https://ui.bkev.in/ai-skill/components/tabs.meta.ts)
+- **Tooltip**: https://ui.bkev.in/docs/components/tooltip (Meta: https://ui.bkev.in/ai-skill/components/tooltip.meta.ts)
+
+## Quick Installation & Setup
+```bash
+npm install @boredkevin/ui lucide-react
+```
+
+Import CSS tokens and wrap your root with `ThemeProvider`:
+```tsx
+import React from 'react';
+import { ThemeProvider, Card, CardHeader, CardTitle, CardContent, Button, CanvasBackground } from '@boredkevin/ui';
+import '@boredkevin/ui/theme.css';
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center p-6">
+        <CanvasBackground />
+        <Card telemetry="SYS.01" className="w-full max-w-md relative z-10">
+          <CardHeader>
+            <CardTitle>Telemetry Node</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Button variant="cyber" className="w-full">Initialize</Button>
+          </CardContent>
+        </Card>
+      </div>
+    </ThemeProvider>
+  );
+}
+```

@@ -14,7 +14,9 @@
     "build": "npm run build:ui && npm run build:showcase",
     "preview": "npm run preview --workspace=apps/showcase",
     "publish:ui": "npm publish --workspace=packages/ui --access public",
-    "publish:gpr": "npm publish --workspace=packages/ui --registry=https://npm.pkg.github.com"
+    "publish:gpr": "npm publish --workspace=packages/ui --registry=https://npm.pkg.github.com",
+    "validate:ai-skill": "npx tsx ai-skill/scripts/validate-meta.ts",
+    "build:llms-txt": "npx tsx ai-skill/scripts/generate-llms-txt.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
