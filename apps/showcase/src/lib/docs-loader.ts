@@ -86,7 +86,7 @@ const BADGE_MAP: Record<string, string> = {
 };
 
 // Import all markdown files from the single source docs/ folder in repo root
-const rawFiles = (import.meta as any).glob('../../../docs/**/*.md', {
+const rawFiles = (import.meta as any).glob('@docs/**/*.md', {
   query: '?raw',
   eager: true,
   import: 'default',
