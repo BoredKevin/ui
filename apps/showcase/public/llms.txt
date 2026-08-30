@@ -1,91 +1,62 @@
 # @boredkevin/ui
 
-> A precision-crafted, pitch-dark Shadcn UI design system engineered for modern React applications with live HSL theme controls, custom sci-fi chamfers, and hardware-accelerated canvas backgrounds.
+> A precision-crafted, pitch-dark React design system with live HSL theme controls, custom sci-fi chamfers, and hardware-accelerated canvas backgrounds.
 
-## Documentation URL
-The complete, interactive documentation and API references are hosted live at:
-https://ui.bkev.in/docs
+## Documentation & Endpoints
+- Quickstart & Setup: https://ui.bkev.in/docs/installation
+- Theming & Tokens: https://ui.bkev.in/docs/theming
+- Canvas Backgrounds: https://ui.bkev.in/docs/backgrounds
+- LLMs Prompt Guide: https://ui.bkev.in/docs/llms
 
-When generating code or answering questions about `@boredkevin/ui`, read and reference the live documentation endpoints below.
+## AI Skill & Machine Specifications
+- Master System Prompt: https://ui.bkev.in/ai-skill/SKILL.md
+- Design Tokens & Brand Schema: https://ui.bkev.in/ai-skill/design.json
 
-## Documentation Index & Endpoints
-- **Quickstart & Setup**: https://ui.bkev.in/docs/installation
-- **Theming & Tokens**: https://ui.bkev.in/docs/theming
-- **Canvas Backgrounds**: https://ui.bkev.in/docs/backgrounds
-- **AI Integration Guide**: https://ui.bkev.in/docs/llms
+## Component AI Metadata & Docs
+- **Accordion**: https://ui.bkev.in/docs/components/accordion (Meta: https://ui.bkev.in/ai-skill/components/accordion.meta.ts)
+- **Avatar**: https://ui.bkev.in/docs/components/avatar (Meta: https://ui.bkev.in/ai-skill/components/avatar.meta.ts)
+- **Backgrounds**: https://ui.bkev.in/docs/components/backgrounds (Meta: https://ui.bkev.in/ai-skill/components/backgrounds.meta.ts)
+- **Badge**: https://ui.bkev.in/docs/components/badge (Meta: https://ui.bkev.in/ai-skill/components/badge.meta.ts)
+- **Button**: https://ui.bkev.in/docs/components/button (Meta: https://ui.bkev.in/ai-skill/components/button.meta.ts)
+- **Calendar**: https://ui.bkev.in/docs/components/calendar (Meta: https://ui.bkev.in/ai-skill/components/calendar.meta.ts)
+- **Card**: https://ui.bkev.in/docs/components/card (Meta: https://ui.bkev.in/ai-skill/components/card.meta.ts)
+- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges (Meta: https://ui.bkev.in/ai-skill/components/corner-edges.meta.ts)
+- **Dialog**: https://ui.bkev.in/docs/components/dialog (Meta: https://ui.bkev.in/ai-skill/components/dialog.meta.ts)
+- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu (Meta: https://ui.bkev.in/ai-skill/components/dropdown-menu.meta.ts)
+- **Input**: https://ui.bkev.in/docs/components/input (Meta: https://ui.bkev.in/ai-skill/components/input.meta.ts)
+- **Separator**: https://ui.bkev.in/docs/components/separator (Meta: https://ui.bkev.in/ai-skill/components/separator.meta.ts)
+- **Slider**: https://ui.bkev.in/docs/components/slider (Meta: https://ui.bkev.in/ai-skill/components/slider.meta.ts)
+- **Switch**: https://ui.bkev.in/docs/components/switch (Meta: https://ui.bkev.in/ai-skill/components/switch.meta.ts)
+- **Table**: https://ui.bkev.in/docs/components/table (Meta: https://ui.bkev.in/ai-skill/components/table.meta.ts)
+- **Tabs**: https://ui.bkev.in/docs/components/tabs (Meta: https://ui.bkev.in/ai-skill/components/tabs.meta.ts)
+- **Tooltip**: https://ui.bkev.in/docs/components/tooltip (Meta: https://ui.bkev.in/ai-skill/components/tooltip.meta.ts)
 
-### Component Documentation Directory
-Query any specific component by navigating to `https://ui.bkev.in/docs/components/<component-name>`:
-- **Button**: https://ui.bkev.in/docs/components/button
-  Variants: `default`, `cyber`, `outline`, `secondary`, `destructive`, `ghost`, `link`, `white`. Supports chamfers: `dual`, `top-right`, `all`, `none`.
-- **Card**: https://ui.bkev.in/docs/components/card
-  Pitch-dark card container. Supports `telemetry="SYS.01"` and `cornerLines={true}` for HUD bracket framing.
-- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges
-  Standalone sci-fi HUD bracket framing system with glowing corner lines and telemetry labels.
-- **Input**: https://ui.bkev.in/docs/components/input
-  Text input with high contrast borders, icon slots, and tactical chamfer support.
-- **Badge**: https://ui.bkev.in/docs/components/badge
-  Status indicators: `default`, `secondary`, `destructive`, `outline`, `cyber`.
-- **Dialog**: https://ui.bkev.in/docs/components/dialog
-  Accessible modal dialog powered by Radix UI.
-- **Tabs**: https://ui.bkev.in/docs/components/tabs
-  Layered tab panel navigation with sharp triggers.
-- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu
-  Accessible popover menu with submenus, checkboxes, and radio options.
-- **Accordion**: https://ui.bkev.in/docs/components/accordion
-  Expandable disclosure sections.
-- **Slider**: https://ui.bkev.in/docs/components/slider
-  Precision range slider input.
-- **Switch**: https://ui.bkev.in/docs/components/switch
-  2-state toggle control.
-- **Avatar**: https://ui.bkev.in/docs/components/avatar
-  User representation with fallback text/icons.
-- **Calendar**: https://ui.bkev.in/docs/components/calendar
-  Interactive schedule calendar picker.
-- **Table**: https://ui.bkev.in/docs/components/table
-  High-density responsive data grid.
-- **Tooltip**: https://ui.bkev.in/docs/components/tooltip
-  Instant contextual help popup.
-- **Separator**: https://ui.bkev.in/docs/components/separator
-  Crisp divider line.
-
-## Quickstart & Implementation
-\`\`\`bash
+## Quick Installation & Setup
+```bash
 npm install @boredkevin/ui lucide-react
-\`\`\`
+```
 
-Import CSS tokens and wrap your root with \`ThemeProvider\`:
-\`\`\`tsx
+Import CSS tokens and wrap your root with `ThemeProvider`:
+```tsx
 import React from 'react';
-import {
-  ThemeProvider,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  Button,
-  ConstellationsBackground
-} from '@boredkevin/ui';
+import { ThemeProvider, Card, CardHeader, CardTitle, CardContent, Button, CanvasBackground } from '@boredkevin/ui';
+import '@boredkevin/ui/theme.css';
 
 export function App() {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center p-6">
-        <ConstellationsBackground particleCount={40} interactive />
+        <CanvasBackground />
         <Card telemetry="SYS.01" className="w-full max-w-md relative z-10">
           <CardHeader>
             <CardTitle>Telemetry Node</CardTitle>
-            <CardDescription>Pitch dark interface with HSL accents.</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="cyber" className="w-full">
-              Initialize
-            </Button>
+            <Button variant="cyber" className="w-full">Initialize</Button>
           </CardContent>
         </Card>
       </div>
     </ThemeProvider>
   );
 }
-\`\`\`
+```

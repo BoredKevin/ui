@@ -85,23 +85,12 @@ const BADGE_MAP: Record<string, string> = {
   'corner-edges': 'HUD',
 };
 
-// Import all markdown files from the docs folder
-const rawFilesInternal = (import.meta as any).glob('../docs/**/*.md', {
+// Import all markdown files from the single source docs/ folder in repo root
+const rawFiles = (import.meta as any).glob('../../../docs/**/*.md', {
   query: '?raw',
   eager: true,
   import: 'default',
 }) as Record<string, string>;
-
-const rawFilesRoot = (import.meta as any).glob('../../../docs/**/*.md', {
-  query: '?raw',
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-const rawFiles = {
-  ...rawFilesRoot,
-  ...rawFilesInternal,
-};
 
 function slugify(text: string): string {
   return text

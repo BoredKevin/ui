@@ -3,6 +3,7 @@ import path from 'path';
 
 const BASE_URL = 'https://ui.bkev.in';
 const PUBLIC_DIR = path.resolve('public');
+const SHOWCASE_PUBLIC_DIR = path.resolve('apps/showcase/public');
 const META_DIR = path.resolve('ai-skill/components');
 
 async function generateLlmsTxt() {
@@ -10,6 +11,9 @@ async function generateLlmsTxt() {
 
   if (!fs.existsSync(PUBLIC_DIR)) {
     fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(SHOWCASE_PUBLIC_DIR)) {
+    fs.mkdirSync(SHOWCASE_PUBLIC_DIR, { recursive: true });
   }
 
   const metaFiles = fs
@@ -82,7 +86,9 @@ async function generateLlmsTxt() {
 
   const outputPath = path.join(PUBLIC_DIR, 'llms.txt');
   fs.writeFileSync(outputPath, lines.join('\n'), 'utf8');
-  console.log(`✅ Saved ${lines.length} lines to ${outputPath}`);
+  const showcaseOutputPath = path.join(SHOWCASE_PUBLIC_DIR, 'llms.txt');
+  fs.writeFileSync(showcaseOutputPath, lines.join('\n'), 'utf8');
+  console.log(`✅ Saved ${lines.length} lines to ${outputPath} and ${showcaseOutputPath}`);
 }
 
 generateLlmsTxt().catch((err) => {
