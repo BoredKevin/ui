@@ -1,72 +1,113 @@
-# AI Skill & LLM Integration Guide
+# AI Agent Skills & LLM Integration Guide
 
-If you use AI coding assistants like Cursor, Claude Code, Antigravity, GitHub Copilot, or Windsurf when building your apps, you might find that models often default to generic rounded buttons and standard Tailwind classes.
+If you use AI coding assistants like Cursor, Claude Code, Antigravity, GitHub Copilot, or Windsurf when building your apps, models often default to generic rounded buttons and standard Tailwind classes.
 
-You can use a complete, installable **AI Skill**, machine-readable metadata, and a standardized `llms.txt` file so your AI tools reliably understand `@boredkevin/ui`'s custom chamfer clip-paths, HUD telemetry tags, liquid-glass cards, and animated canvas backgrounds.
+`@boredkevin/ui` provides a **Convex-style modular AI Agent Skills** architecture:
+1. **Master Skill** (`.agents/skills/boredkevin-ui/SKILL.md`): High-level system architecture, `<ThemeProvider>` checklist, design token rules, chamfers, canvas backgrounds, and sub-skill directory.
+2. **Granular Component Sub-Skills** (`.agents/skills/boredkevin-ui-<component>/SKILL.md`): Self-contained skills for every component (`boredkevin-ui-button`, `boredkevin-ui-card`, `boredkevin-ui-dialog`, etc.) with exact prop types, valid variants, and copy-paste examples.
+3. **Non-Destructive Layered Rules**: When installed in a project that already has `.cursorrules`, `AGENTS.md`, or `CLAUDE.md`, the CLI **layers on top** of your existing configuration rather than overwriting your custom instructions.
 
 ---
 
 ## Quick Install
 
-### 1. Install via CLI
+### Method 1: Automatic Setup via CLI (Recommended)
 
-Run this in your project root to pull down the AI skill rules and tokens:
+Run this one-liner in your project root to layer rules and install all skills:
 
 ```bash
-npx degit boredkevin/ui/ai-skill ai-skill
+# Using npx
+npx @boredkevin/ui init
+
+# Or install specific component skills
+npx @boredkevin/ui add button card dialog
 ```
 
-Or curl the master prompt directly:
+### Method 2: Universal Skills CLI (Convex Compatible)
+
+You can also install via the open agent skills ecosystem:
 
 ```bash
-# For Cursor
-curl -fsSL https://raw.githubusercontent.com/boredkevin/ui/main/ai-skill/SKILL.md -o .cursorrules
+# Install all skills
+npx skills add BoredKevin/ui --all
 
-# For Claude Code
-curl -fsSL https://raw.githubusercontent.com/boredkevin/ui/main/ai-skill/SKILL.md -o CLAUDE.md
+# Or install a specific skill
+npx skills add BoredKevin/ui --skill boredkevin-ui-button
 ```
 
 ---
 
-## Editor Configurations
+## How Rule Layering Works ("Added On Top")
 
-### Cursor (`.cursorrules`)
+When `@boredkevin/ui init` runs, it inspects your repository for existing configuration files:
+- `.cursorrules`
+- `AGENTS.md`
+- `CLAUDE.md`
+
+It uses delimiter markers:
 ```markdown
-# @boredkevin/ui Rules
-- Always import components from '@boredkevin/ui'.
-- Wrap app with <ThemeProvider> and import '@boredkevin/ui/theme.css'.
-- Use semantic Tailwind tokens (bg-primary, text-muted-foreground, border-border).
-- Buttons: variant="cyber" | "default" | "outline" | "secondary" | "destructive" | "ghost" | "link" | "white"
-- Badges: variant="default" | "secondary" | "destructive" | "outline" | "success" | "warning"
-- Cards: <Card telemetry="SYS.01" cornerLines={true} liquidGlass={true}>
-- Backgrounds: <CanvasBackground />, <ConstellationsBackground />, <PerlinNoiseBackground />, <AtmosphericAuroraBackground />
-- Endpoints: https://ui.bkev.in/llms.txt & https://ui.bkev.in/ai-skill/SKILL.md
+<!-- @boredkevin/ui:start -->
+... (@boredkevin/ui rules and skill links) ...
+<!-- @boredkevin/ui:end -->
 ```
 
-### Claude Code (`CLAUDE.md`)
-```markdown
-# Claude Code Project Guidelines — @boredkevin/ui
-- Always use @boredkevin/ui components instead of raw HTML elements.
-- Wrap root tree in <ThemeProvider> and import '@boredkevin/ui/theme.css'.
-- Use sci-fi HUD aesthetic: dark backgrounds, corner chamfers, 1px high-contrast borders.
-- Consult https://ui.bkev.in/llms.txt for full endpoint mapping and component metadata.
-```
+- **If the file already exists**: The `@boredkevin/ui` block is added on top, preserving all of your project's custom instructions, formatting conventions, and existing rules.
+- **If the file is updated later**: Running `init` again cleanly refreshes the block between the markers without duplicating content or altering your custom rules.
+- **If the file does not exist**: It creates the file with the formatted block.
 
-### Antigravity IDE (`.agents/skills/boredkevin-ui/SKILL.md`)
-Place the skill at `.agents/skills/boredkevin-ui/SKILL.md` or in `~/.gemini/config/skills/boredkevin-ui/SKILL.md` for global discovery.
+---
 
-### GitHub Copilot (`.github/copilot-instructions.md`)
-```markdown
-- Use @boredkevin/ui for all UI components.
-- Wrap React trees with <ThemeProvider>.
-- Use semantic color tokens (bg-card, text-primary, border-border).
+## Modular Skills Directory Structure
+
+After installation, your project structure looks like:
+
+```text
+your-project/
+├── .cursorrules                      # Layered on top of your rules
+├── AGENTS.md                         # Universal agent guide (layered)
+├── CLAUDE.md                         # Claude Code instructions (layered)
+└── .agents/
+    └── skills/
+        ├── boredkevin-ui/
+        │   └── SKILL.md              # Master skill & directory
+        ├── boredkevin-ui-accordion/
+        │   └── SKILL.md              # Accordion component skill
+        ├── boredkevin-ui-button/
+        │   └── SKILL.md              # Button variants, chamfers, sizes
+        ├── boredkevin-ui-card/
+        │   └── SKILL.md              # Card telemetry, liquid glass, corner lines
+        ├── boredkevin-ui-dialog/
+        │   └── SKILL.md              # Dialog modal overlay
+        └── ...                       # All 17 component sub-skills
 ```
 
 ---
 
-## Endpoints & Specifications
+## Editor & Agent Configurations
+
+### Cursor (`.cursorrules` & `.cursor/skills/`)
+Cursor reads `.cursorrules` at session start. To mirror skills directly to Cursor's skills folder:
+```bash
+npx @boredkevin/ui init --cursor
+```
+
+### Claude Code (`CLAUDE.md` & `.claude/skills/`)
+Claude Code reads `CLAUDE.md` in your project root. To mirror skills directly to Claude's skills folder:
+```bash
+npx @boredkevin/ui init --claude
+```
+
+### Antigravity IDE (`.agents/skills/`)
+Antigravity automatically discovers skills in `.agents/skills/`. Whenever you ask Antigravity to build or modify a component (e.g. "Add a cyber button and a telemetry card"), it activates:
+- `boredkevin-ui` for global context
+- `boredkevin-ui-button` for button-specific props and clip-paths
+- `boredkevin-ui-card` for card telemetry and glass styling
+
+---
+
+## Endpoints & Registry
 
 - **Live Documentation**: `https://ui.bkev.in/docs`
 - **Standardized LLMs Index**: `https://ui.bkev.in/llms.txt`
-- **Master AI Skill Rules**: `https://ui.bkev.in/ai-skill/SKILL.md`
-- **Design Tokens Schema**: `https://ui.bkev.in/ai-skill/design.json`
+- **Skills Registry Manifest**: `https://ui.bkev.in/skills.json`
+- **Master Skill Source**: `https://ui.bkev.in/skills/boredkevin-ui/SKILL.md`

@@ -8,28 +8,30 @@
 - Canvas Backgrounds: https://ui.bkev.in/docs/backgrounds
 - LLMs Prompt Guide: https://ui.bkev.in/docs/llms
 
-## AI Skill & Machine Specifications
-- Master System Prompt: https://ui.bkev.in/ai-skill/SKILL.md
+## AI Skills & Machine Specifications
+- CLI Setup: `npx @boredkevin/ui init` (or `npx skills add BoredKevin/ui`)
+- Master System Skill: https://ui.bkev.in/skills/boredkevin-ui/SKILL.md
+- Skills Manifest: https://ui.bkev.in/skills.json
 - Design Tokens & Brand Schema: https://ui.bkev.in/ai-skill/design.json
 
-## Component AI Metadata & Docs
-- **Accordion**: https://ui.bkev.in/docs/components/accordion (Meta: https://ui.bkev.in/ai-skill/components/accordion.meta.ts)
-- **Avatar**: https://ui.bkev.in/docs/components/avatar (Meta: https://ui.bkev.in/ai-skill/components/avatar.meta.ts)
-- **Backgrounds**: https://ui.bkev.in/docs/components/backgrounds (Meta: https://ui.bkev.in/ai-skill/components/backgrounds.meta.ts)
-- **Badge**: https://ui.bkev.in/docs/components/badge (Meta: https://ui.bkev.in/ai-skill/components/badge.meta.ts)
-- **Button**: https://ui.bkev.in/docs/components/button (Meta: https://ui.bkev.in/ai-skill/components/button.meta.ts)
-- **Calendar**: https://ui.bkev.in/docs/components/calendar (Meta: https://ui.bkev.in/ai-skill/components/calendar.meta.ts)
-- **Card**: https://ui.bkev.in/docs/components/card (Meta: https://ui.bkev.in/ai-skill/components/card.meta.ts)
-- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges (Meta: https://ui.bkev.in/ai-skill/components/corner-edges.meta.ts)
-- **Dialog**: https://ui.bkev.in/docs/components/dialog (Meta: https://ui.bkev.in/ai-skill/components/dialog.meta.ts)
-- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu (Meta: https://ui.bkev.in/ai-skill/components/dropdown-menu.meta.ts)
-- **Input**: https://ui.bkev.in/docs/components/input (Meta: https://ui.bkev.in/ai-skill/components/input.meta.ts)
-- **Separator**: https://ui.bkev.in/docs/components/separator (Meta: https://ui.bkev.in/ai-skill/components/separator.meta.ts)
-- **Slider**: https://ui.bkev.in/docs/components/slider (Meta: https://ui.bkev.in/ai-skill/components/slider.meta.ts)
-- **Switch**: https://ui.bkev.in/docs/components/switch (Meta: https://ui.bkev.in/ai-skill/components/switch.meta.ts)
-- **Table**: https://ui.bkev.in/docs/components/table (Meta: https://ui.bkev.in/ai-skill/components/table.meta.ts)
-- **Tabs**: https://ui.bkev.in/docs/components/tabs (Meta: https://ui.bkev.in/ai-skill/components/tabs.meta.ts)
-- **Tooltip**: https://ui.bkev.in/docs/components/tooltip (Meta: https://ui.bkev.in/ai-skill/components/tooltip.meta.ts)
+## Modular Component AI Skills & Docs
+- **Accordion**: https://ui.bkev.in/docs/components/accordion (Skill: https://ui.bkev.in/skills/boredkevin-ui-accordion/SKILL.md)
+- **Avatar**: https://ui.bkev.in/docs/components/avatar (Skill: https://ui.bkev.in/skills/boredkevin-ui-avatar/SKILL.md)
+- **Backgrounds**: https://ui.bkev.in/docs/components/backgrounds (Skill: https://ui.bkev.in/skills/boredkevin-ui-backgrounds/SKILL.md)
+- **Badge**: https://ui.bkev.in/docs/components/badge (Skill: https://ui.bkev.in/skills/boredkevin-ui-badge/SKILL.md)
+- **Button**: https://ui.bkev.in/docs/components/button (Skill: https://ui.bkev.in/skills/boredkevin-ui-button/SKILL.md)
+- **Calendar**: https://ui.bkev.in/docs/components/calendar (Skill: https://ui.bkev.in/skills/boredkevin-ui-calendar/SKILL.md)
+- **Card**: https://ui.bkev.in/docs/components/card (Skill: https://ui.bkev.in/skills/boredkevin-ui-card/SKILL.md)
+- **CornerEdges**: https://ui.bkev.in/docs/components/corner-edges (Skill: https://ui.bkev.in/skills/boredkevin-ui-corner-edges/SKILL.md)
+- **Dialog**: https://ui.bkev.in/docs/components/dialog (Skill: https://ui.bkev.in/skills/boredkevin-ui-dialog/SKILL.md)
+- **DropdownMenu**: https://ui.bkev.in/docs/components/dropdown-menu (Skill: https://ui.bkev.in/skills/boredkevin-ui-dropdown-menu/SKILL.md)
+- **Input**: https://ui.bkev.in/docs/components/input (Skill: https://ui.bkev.in/skills/boredkevin-ui-input/SKILL.md)
+- **Separator**: https://ui.bkev.in/docs/components/separator (Skill: https://ui.bkev.in/skills/boredkevin-ui-separator/SKILL.md)
+- **Slider**: https://ui.bkev.in/docs/components/slider (Skill: https://ui.bkev.in/skills/boredkevin-ui-slider/SKILL.md)
+- **Switch**: https://ui.bkev.in/docs/components/switch (Skill: https://ui.bkev.in/skills/boredkevin-ui-switch/SKILL.md)
+- **Table**: https://ui.bkev.in/docs/components/table (Skill: https://ui.bkev.in/skills/boredkevin-ui-table/SKILL.md)
+- **Tabs**: https://ui.bkev.in/docs/components/tabs (Skill: https://ui.bkev.in/skills/boredkevin-ui-tabs/SKILL.md)
+- **Tooltip**: https://ui.bkev.in/docs/components/tooltip (Skill: https://ui.bkev.in/skills/boredkevin-ui-tooltip/SKILL.md)
 
 ## Quick Installation & Setup
 ```bash

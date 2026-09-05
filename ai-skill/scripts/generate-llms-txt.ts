@@ -31,11 +31,13 @@ async function generateLlmsTxt() {
     `- Canvas Backgrounds: ${BASE_URL}/docs/backgrounds`,
     `- LLMs Prompt Guide: ${BASE_URL}/docs/llms`,
     '',
-    '## AI Skill & Machine Specifications',
-    `- Master System Prompt: ${BASE_URL}/ai-skill/SKILL.md`,
+    '## AI Skills & Machine Specifications',
+    '- CLI Setup: `npx @boredkevin/ui init` (or `npx skills add BoredKevin/ui`)',
+    `- Master System Skill: ${BASE_URL}/skills/boredkevin-ui/SKILL.md`,
+    `- Skills Manifest: ${BASE_URL}/skills.json`,
     `- Design Tokens & Brand Schema: ${BASE_URL}/ai-skill/design.json`,
     '',
-    '## Component AI Metadata & Docs',
+    '## Modular Component AI Skills & Docs',
   ];
 
   for (const file of metaFiles) {
@@ -46,7 +48,7 @@ async function generateLlmsTxt() {
       .join('');
 
     lines.push(
-      `- **${name}**: ${BASE_URL}/docs/components/${slug} (Meta: ${BASE_URL}/ai-skill/components/${file})`
+      `- **${name}**: ${BASE_URL}/docs/components/${slug} (Skill: ${BASE_URL}/skills/boredkevin-ui-${slug}/SKILL.md)`
     );
   }
 
