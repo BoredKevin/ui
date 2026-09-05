@@ -1,6 +1,6 @@
 {
   "name": "@boredkevin/ui",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A sharp-cornered Shadcn UI theme with pitch dark aesthetic, live HSL controls, custom chamfers, and drop-in integration.",
   "type": "module",
   "license": "MIT",
@@ -38,8 +38,14 @@
     },
     "./theme.css": "./dist/theme.css"
   },
+  "bin": {
+    "boredkevin-ui": "./bin/cli.mjs",
+    "@boredkevin/ui": "./bin/cli.mjs"
+  },
   "files": [
     "dist",
+    "bin",
+    "skills",
     "README.md",
     "LICENSE"
   ],

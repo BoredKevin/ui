@@ -1,7 +1,7 @@
 {
   "name": "boredkevin-ui-workspace",
   "private": true,
-  "version": "0.2.0",
+  "version": "1.0.0",
   "type": "module",
   "workspaces": [
     "packages/*",
@@ -13,9 +13,10 @@
     "build:showcase": "npm run build --workspace=apps/showcase",
     "build": "npm run build:ui && npm run build:showcase",
     "preview": "npm run preview --workspace=apps/showcase",
-    "publish:ui": "npm publish --workspace=packages/ui --access public",
+    "publish:ui": "npm publish --workspace=packages/ui --@boredkevin:registry=https://registry.npmjs.org/ --access public",
     "publish:gpr": "npm publish --workspace=packages/ui --registry=https://npm.pkg.github.com",
     "validate:ai-skill": "npx tsx ai-skill/scripts/validate-meta.ts",
+    "build:skills": "npx tsx ai-skill/scripts/generate-agent-skills.ts",
     "build:llms-txt": "npx tsx ai-skill/scripts/generate-llms-txt.ts"
   },
   "devDependencies": {
