@@ -1,0 +1,100 @@
+{
+  "$schema": "https://skills.json",
+  "name": "@boredkevin/ui",
+  "version": "1.0.0",
+  "description": "Convex-style modular AI Agent Skills for @boredkevin/ui React sci-fi component library",
+  "homepage": "https://ui.bkev.in/docs/llms",
+  "repository": "https://github.com/BoredKevin/ui",
+  "skills": [
+    {
+      "name": "boredkevin-ui",
+      "description": "Master skill for @boredkevin/ui design system, tokens, and component index",
+      "path": "skills/boredkevin-ui/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-accordion",
+      "description": "Skill for Accordion component (Accordion, AccordionItem, AccordionTrigger, AccordionContent)",
+      "path": "skills/boredkevin-ui-accordion/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-avatar",
+      "description": "Skill for Avatar component (Avatar, AvatarImage, AvatarFallback)",
+      "path": "skills/boredkevin-ui-avatar/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-backgrounds",
+      "description": "Skill for Backgrounds component (CanvasBackground, ConstellationsBackground, PerlinNoiseBackground, AtmosphericAuroraBackground)",
+      "path": "skills/boredkevin-ui-backgrounds/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-badge",
+      "description": "Skill for Badge component (Badge, badgeVariants)",
+      "path": "skills/boredkevin-ui-badge/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-button",
+      "description": "Skill for Button component (Button, buttonVariants)",
+      "path": "skills/boredkevin-ui-button/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-calendar",
+      "description": "Skill for Calendar component (Calendar)",
+      "path": "skills/boredkevin-ui-calendar/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-card",
+      "description": "Skill for Card component (Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter)",
+      "path": "skills/boredkevin-ui-card/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-corner-edges",
+      "description": "Skill for CornerEdges component (CornerEdges)",
+      "path": "skills/boredkevin-ui-corner-edges/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-dialog",
+      "description": "Skill for Dialog component (Dialog, DialogPortal, DialogOverlay, DialogTrigger, DialogClose, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription)",
+      "path": "skills/boredkevin-ui-dialog/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-dropdown-menu",
+      "description": "Skill for DropdownMenu component (DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuPortal, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuRadioGroup)",
+      "path": "skills/boredkevin-ui-dropdown-menu/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-input",
+      "description": "Skill for Input component (Input)",
+      "path": "skills/boredkevin-ui-input/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-separator",
+      "description": "Skill for Separator component (Separator)",
+      "path": "skills/boredkevin-ui-separator/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-slider",
+      "description": "Skill for Slider component (Slider)",
+      "path": "skills/boredkevin-ui-slider/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-switch",
+      "description": "Skill for Switch component (Switch)",
+      "path": "skills/boredkevin-ui-switch/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-table",
+      "description": "Skill for Table component (Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption)",
+      "path": "skills/boredkevin-ui-table/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-tabs",
+      "description": "Skill for Tabs component (Tabs, TabsList, TabsTrigger, TabsContent)",
+      "path": "skills/boredkevin-ui-tabs/SKILL.md"
+    },
+    {
+      "name": "boredkevin-ui-tooltip",
+      "description": "Skill for Tooltip component (Tooltip, TooltipTrigger, TooltipContent, TooltipProvider)",
+      "path": "skills/boredkevin-ui-tooltip/SKILL.md"
+    }
+  ]
+}
